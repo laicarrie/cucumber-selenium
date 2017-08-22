@@ -14,7 +14,6 @@ defineSupportCode(function({Given, When, Then}) {
 
   When('I click on {string} button', function (text) {
     var page = new SearchPage(this.driver)
-    console.log(text)
     return page.click(text)
 //   return this.driver.findElement({xpath: `//input[contains(@value,'${text}')]`})
 //   .then(function(element) {
@@ -30,8 +29,8 @@ defineSupportCode(function({Given, When, Then}) {
 //    var xpath = "//*[contains(text(),'" + text + "')]";
     
     let page = new SearchResultPage(this.driver)
-    var path = page.elements(text)
-    console.log(path)
+//    var path = page.elements(text)
+//    console.log(path)
     return page.waitAndLocate(text, 10000)
 /*
 

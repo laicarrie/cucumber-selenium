@@ -8,7 +8,7 @@ class SearchResultPage extends Page {
     return {
        
 //      "Search jobs": this.by.xPath("//input[contains(@value,'Log in')]")
-		"Edit Search": this.by.id('editSearch')
+		"Edit Search": this.by.linkText('Edit Search')
     }
   
   }
@@ -18,6 +18,10 @@ class SearchResultPage extends Page {
     return ''
   
   }
+
+//  isOnThisPage(){
+
+ // }
 
 }
 

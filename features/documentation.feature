@@ -5,7 +5,7 @@ Feature: Search jobs
   	
   Scenario: Search for all jobs
     Given I am on Search page
-    When I click on More options button
+    When I click on Search jobs button
     Then I should see Edit Search button
  
 
