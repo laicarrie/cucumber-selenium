@@ -1,24 +1,7 @@
 let {until, By} = require('selenium-webdriver')
+let View = require('./View.js')
 
-class Page {
-
-  constructor(driver) {
-
-    this.driver = driver
-
-  }
-
-  get by() {
-  
-    return By
-  
-  }
-
-  get elements() {
-  
-    return { } 
-
-  }
+class Page extends View{
 
   get url() {
   
@@ -30,42 +13,6 @@ class Page {
   
     return this.driver.get(this.url)
 
-  }
-
-  click(elementId) {
-
-    let element = this.elements[elementId]
- 
-    element = element ? element : elementId
-
-    return this.driver.findElement(element).then(function(element) {
-
-      return element.click();
-
-    });
-  
-  }
-
-  waitAndLocate(elementId, timeout = 5000) {
-
-    let element = this.elements[elementId]
-
-    element = element ? element : elementId
-
-    var condition = until.elementLocated(element);
-    return this.driver.wait(condition, timeout); 
-
-  }
-
-  waitAndFill(elementId, keyin, timeout = 5000) {
-
-    return this.waitAndLocate(elementId, timeout).sendKeys(keyin); 
-
-  }
-
-  exist(pageID) {
-
-    return waitAndLocate(pageID, 5000)
   }
 
 }

@@ -7,7 +7,8 @@ Feature: Search
   Scenario: Search for all jobs
     Given I am on Search page
     When I click on Search jobs button
-    Then I should see Edit Search button
+    Then I should land on Search Result page
+    And I should see Edit Search button
  
 
 

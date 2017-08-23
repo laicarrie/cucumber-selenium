@@ -3,51 +3,55 @@ var {defineSupportCode} = require('cucumber');
 
 defineSupportCode(function({Given, When, Then}) {
 
-  let pageMapping = {
+  let ViewMapping = {
     "Login page": LoginPage,
     "Search page": SearchPage,
     "Logged in header": loggedInHeader,
-    "Logged in header module": loggedInHeader
+    "Search Result page": SearchResultPage
   }
 
 
   Given('I am on {string}', function(text) {
-    var pageClass = pageMapping[text]
-    var page = new pageClass(this.driver)
+    let viewClass = ViewMapping[text]
+    let view = new viewClass(app.driver)
 
-    this.page = page
-    return page.go()
+    this.view = view
+    return view.go()
+    
   });
 
-  When('I type in {string} on {string}', function (text, inputfield) {
-//    var page = new LoginPage(this.driver)
-    
-    return this.page.waitAndFill(inputfield, text, 5000)
+  When('I type in "{string}" on {string}', function (text, inputfield) {
+
+    return this.view.waitAndFill(inputfield, text, 5000)
 //   return this.driver.findElement({xpath: `//input[contains(@value,'${text}')]`})
   });
 
   When('I click on {string} button', function (text) {
-//    var page = new SearchPage(this.driver)
-    return this.page.click(text)
-//   return this.driver.findElement({xpath: `//input[contains(@value,'${text}')]`})
+
+    return this.view.click(text)
+
   });
 
-//   Then('I should see {string} module', function (text) {
-//     var moduleClass = moduleMapping[text]
-//     var module = new moduleClass(this.driver)
-// //    var xpath = "//*[contains(text(),'" + text + "')]";
-    
-// //    let page = new SearchResultPage(this.driver)
-//     return this.module.isCurrentPage(text);
-
-//   });
 
   Then('I should see {string}', function (text) {
+    let viewClass = ViewMapping[text]
+    let view
 
-//    var xpath = "//*[contains(text(),'" + text + "')]";
+    if (viewClass) {
+      view = new viewClass(app.driver)
+      return view.exist() 
+    } 
     
-//    let page = new SearchResultPage(this.driver)
-    return this.page.waitAndLocate(text, 5000)
+    return this.view.waitAndLocate(text, 5000)
+
+  });
+
+  Then('I should land on {string}', function (text) {
+    let viewClass = ViewMapping[text]
+    let view = new viewClass(app.driver)
+    
+    this.view = view
+    return view.exist() 
 
   });
 

@@ -1,6 +1,6 @@
 let View = require('./View.js')
 
-class LoggedInHeader extends View {
+class LoggedOutHeader extends View {
 
   get elements() {
 
@@ -14,4 +14,4 @@ class LoggedInHeader extends View {
 
 }
 
-module.exports = LoggedInHeader
+module.exports = LoggedOutHeader

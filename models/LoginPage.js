@@ -6,7 +6,7 @@ class LoginPage extends Page {
 
     return {
        
-		"pageID": this.by.xpath('//title[contains(text(), "Already have a jobsDB Profile? Login")]'),
+		"ID": this.by.xpath('//title[contains(text(), "Already have a jobsDB Profile? Login")]'),
 		"email field": this.by.id('uName'),
 		"password field": this.by.id('uPwd'),
 		"Log in": this.by.xpath('//input[contains(@value,"Log in")]'),

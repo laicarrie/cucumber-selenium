@@ -1,6 +1,6 @@
 var {defineSupportCode } = require('cucumber');
 
-defineSupportCode(function({Before, After, setWorldConstructor, setDefaultTimeout}) {
+defineSupportCode(function({Before, After, setDefaultTimeout}) {
 
   setDefaultTimeout(40 *1000)
 
@@ -12,15 +12,9 @@ defineSupportCode(function({Before, After, setWorldConstructor, setDefaultTimeou
 
   After(function() {
 
-    return this.driver.quit();
+    return app.driver.quit();
 
   });
-  
-  setWorldConstructor(function() {
-  
-    this.driver = app.driver
-
-  })
 
 });
 

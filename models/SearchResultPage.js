@@ -4,9 +4,8 @@ class SearchResultPage extends Page {
 
   get elements() {
 
-//  	console.log(Object.keys(this.by));
     return {
-       
+       	"ID": this.by.xpath('//title[contains(text(), "jobs for all jobs")]'),
 //      "Search jobs": this.by.xPath("//input[contains(@value,'Log in')]")
 		"Edit Search button": this.by.linkText('Edit Search')
     }

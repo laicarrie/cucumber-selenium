@@ -50,7 +50,6 @@ class App {
   
     this.loadConfig()
     this.loadPage()
-    this.setupDriver()
 
   }
 
@@ -66,33 +65,19 @@ class App {
   
   }
 
-  setupDriver() {
 
-  let server = this.config.server
-  let client = this.config.client[this.config.testClient]
+  initDriver() {
+    let server = this.config.server
+    let client = this.config.client[this.config.testClient]
 
     let driver = new seleniumWebdriver.Builder()
         .forBrowser(client.browser)
         .usingServer(`http://${server.host}:${server.port}/wd/hub`)
         .build()
 
-//  driver.on('status', function (info) {
-//    console.log(info.cyan);
-//  });
-//  driver.on('command', function (meth, path, data) {
-//    console.log(' > ' + meth.yellow, path.grey, data || '');
-//  });
-//  driver.on('http', function (meth, path, data) {
-//    console.log(' > ' + meth.magenta, path, (data || '').grey);
-//  });
-
-    this.driver = driver
-
-  }
-
-  initDriver() {
-
-    return this.driver
+//    this.driver = driver
+    
+    return this.driver = driver
   
   }
 
