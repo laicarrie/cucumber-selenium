@@ -57,6 +57,17 @@ class Page {
 
   }
 
+  waitAndFill(elementId, keyin, timeout = 5000) {
+
+    return this.waitAndLocate(elementId, timeout).sendKeys(keyin); 
+
+  }
+
+  exist(pageID) {
+
+    return waitAndLocate(pageID, 5000)
+  }
+
 }
 
 module.exports = Page

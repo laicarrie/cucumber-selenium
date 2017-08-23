@@ -11,6 +11,7 @@ class SearchPage extends Page {
 		"Search jobs": this.by.id('submitButton')
     }
   
+  
   }
 
   get url() {
