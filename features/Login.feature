@@ -14,6 +14,17 @@ Feature: Login
   Examples:
     | email | password |
     | carrielai@seekasia.com | Carrie1234 |
-    | jobsdbcarrielai1@gmail.com | carrie1234 |
+ #   | jobsdbcarrielai1@gmail.com | carrie1234 |
 
+
+  Scenario Outline: Existing member cannot login with incorrect email & password
+    Given I am on Login page
+    When I type in "<email>" on email field
+    And I type in "<password>" on password field
+    And I click on Log in button
+    Then I should see error alert prompt
+
+  Examples:
+    | email | password |
+    | carrielai@seekasia.com | WrongPassword |
 

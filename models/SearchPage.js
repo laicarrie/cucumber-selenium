@@ -8,10 +8,10 @@ class SearchPage extends Page {
        
 //      "Search jobs": this.by.xPath("//input[contains(@value,'Log in')]")
 		"More options": this.by.linkText('More options'),
-		"Search jobs": this.by.id('submitButton')
+		"Search jobs button": this.by.id('submitButton')
     }
   
-  
+
   }
 
   get url() {

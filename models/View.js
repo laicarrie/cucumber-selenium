@@ -57,6 +57,19 @@ class View {
     return this.waitAndLocate(ID, 5000)
   }
 
+  screenshot(fileName) {
+
+    return this.driver.takeScreenshot().then(
+      function(image, err) {
+        require('fs').writeFile(`./screenshot/${fileName}.png`, image, 'base64', function(err) {
+          if (err)
+            console.log(err);
+        });
+      }
+    );
+  }
+
+
 }
 
 module.exports = View
