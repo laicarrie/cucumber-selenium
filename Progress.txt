@@ -1,0 +1,15 @@
+Done:
+- functions that check / find something (if it's on specific page / if specific element exist )
+- actions functions ( go to the page / click element / type on textfield )
+- page / view models
+- page / view mapping
+- data table
+- set user-agent
+- screenshot
+
+
+
+To-do:
+- manage device list
+- manage environment urls
+- tags (run specific group of scenarios)

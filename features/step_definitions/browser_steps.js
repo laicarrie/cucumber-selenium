@@ -57,10 +57,15 @@ defineSupportCode(function({Given, When, Then}) {
       view.screenshot(text)
       return view.exist() 
     } 
-
+    
     this.view.screenshot(text)
     return this.view.waitAndLocate(text, 5000)
 
+  });
+
+  Then('the Search criteria contains {string}', function (text) {
+    let criteria = this.view.containSearchCriteria(text)
+    return this.view.screenshot(text)
   });
 
 
