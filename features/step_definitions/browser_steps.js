@@ -36,11 +36,27 @@ defineSupportCode(function({Given, When, Then}) {
 
   });
 
+
+  Given('{string} is selected', function(text) {
+    return this.view.click(text)
+    .then( () => {
+      return this.view.screenshot(text)
+    })
+  });
+
+
   When('I type in "{string}" on {string}', function (text, inputfield) {
 
     return this.view.waitAndFill(inputfield, text, 5000)
 //   return this.driver.findElement({xpath: `//input[contains(@value,'${text}')]`})
   });
+
+
+  When('I select "{string}" from {string}', function (text, optionlist) {
+
+    return this.view.clickAndSelect(optionlist, text, 5000)
+  });
+
 
   When('I click on {string}', function (text) {
 
@@ -65,7 +81,7 @@ defineSupportCode(function({Given, When, Then}) {
 
   Then('the Search criteria contains {string}', function (text) {
     let criteria = this.view.containSearchCriteria(text)
-    return this.view.screenshot(text)
+    return this.view.screenshot("jobs(s) for " + text)
   });
 
 
@@ -77,6 +93,25 @@ defineSupportCode(function({Given, When, Then}) {
 
     this.view = view
     return view.exist() 
+
+  });
+
+  Then('error alert popups: {string}', function (text) {
+
+    this.view.checkAlertMsg(text, 5000)
+
+    return this.view.screenshot("error")
+  });
+
+  Then('{string} ranges from {string} to {string}', function (elementID, from, to) {
+
+    return this.view.checkSalaryMin(elementID, from)
+    .then( () => {
+
+      return this.view.checkSalaryMax(elementID, to)
+      
+    })
+
 
   });
 

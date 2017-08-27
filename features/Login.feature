@@ -16,15 +16,15 @@ Feature: Login
     | carrielai@seekasia.com | Carrie1234 |
  #   | jobsdbcarrielai1@gmail.com | carrie1234 |
 
-
+  
   Scenario Outline: Existing member cannot login with incorrect email & password
     Given I am on Login page
     When I type in "<email>" on email field
     And I type in "<password>" on password field
     And I click on Log in button
-    Then I should see error alert prompt
+    Then error alert popups: <error msg>
 
   Examples:
-    | email | password |
-    | carrielai@seekasia.com | WrongPassword |
+    | email | password | error msg |
+    | carrielai@seekasia.com | WrongPassword | Either the user name or password was entered incorrectly, please try again. |
 

@@ -47,7 +47,17 @@ class View {
 
   waitAndFill(elementId, keyin, timeout = 5000) {
 
-    return this.waitAndLocate(elementId, timeout).sendKeys(keyin); 
+    return this.waitAndLocate(elementId, timeout).sendKeys(keyin)
+  
+  }
+
+  clickAndSelect(elementId, option, timeout = 5000) {
+
+    return this.waitAndLocate(elementId, timeout).click()
+    .then( () => {
+      let xpath = this.by.xpath(`//option[contains(text(), '${option}')]`)
+      return this.waitAndLocate(xpath, 5000).click()
+    });
 
   }
 
@@ -59,15 +69,41 @@ class View {
 
   screenshot(fileName) {
 
-    return this.driver.takeScreenshot().then(
-      function(image, err) {
+    return this.driver.takeScreenshot()
+    .then(function(image) {
+
+      return new Promise(function(resolve, reject) {
+
         require('fs').writeFile(`./screenshot/${fileName}.png`, image, 'base64', function(err) {
-          if (err)
-            console.log(err);
-        });
-      }
-    );
+
+          if (err) { reject(err); }
+
+          resolve(image);
+
+        })
+      })
+    });
   }
+
+  checkAlertMsg (text, timeout = 5000) {
+
+    let condition = until.alertIsPresent()
+
+    return this.driver.wait(condition , timeout)
+      .then( () => {
+        return this.driver.switchTo().alert().getText()
+      })
+      .then( (alertMsg) => {
+        if (alertMsg != text){
+          return Promise.reject(new Error(`alert box with message ${text} does not exist`))
+        }
+        return alertMsg
+      })
+      .then( () => {
+        return this.driver.switchTo().alert().accept()
+      })
+  }
+
 
 
 }
