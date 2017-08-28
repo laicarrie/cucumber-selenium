@@ -25,7 +25,7 @@ Feature: Search
     | Accountant |
 
 
-  Scenario Outline: Search by job function
+  Scenario Outline: Search by job function <Remarks>
     Given I am on Search page
     When I select "<job function>" from Job function list
     And I click on Search jobs button
@@ -34,8 +34,8 @@ Feature: Search
 
   Examples:
     | job function | Remarks |
-    | Accounting | level one job function |
-    | Accountant | level two job function |
+    | Accounting | ( level one job function ) |
+    | Accountant | ( level two job function ) |
 
 @only
   Scenario: Change salary from monthly to hourly

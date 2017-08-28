@@ -84,7 +84,8 @@ class App {
         .build()
 
     this.driver = driver
-//    this.driver.manage().window().setSize(414, 736)
+
+    if (client.width && client.height) { this.driver.manage().window().setSize(client.width, client.height) }
     return this.driver
   
   }

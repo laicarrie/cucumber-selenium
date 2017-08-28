@@ -15,8 +15,11 @@ Please google how to install docker in your host
     docker exec -it $(foldername)_dev-node_1 /bin/bash
 
 4. run test. feel free to check package.json
-
+	// run all tests with TEST_CLIENT=chrome
     NODE_ENV=local TEST_CLIENT=chrome npm run test
+
+    // run tests that are not tagged as @Android with TEST_CLIENT=iPhone6S_9_0_chrome
+    NODE_ENV=local TEST_CLIENT=iPhone6S_9_0_chrome ./node_modules/.bin/cucumber-js --tags "not @Android"
 
 5. if you need to restart everything. WARNING: this will stop all your containers. Be aware if you are using containers in other project
 
