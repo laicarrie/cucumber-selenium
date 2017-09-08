@@ -7,9 +7,12 @@ Done:
 - set user-agent
 - screenshot
 
+- tags(run specific group of scenarios) 
+- report 
+- manage device list
+
 
 
 To-do:
-- manage device list
 - manage environment urls
-- tags (run specific group of scenarios)
+- manage screenshot timing & naming

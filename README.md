@@ -26,6 +26,9 @@ Please google how to install docker in your host
     docker stop $(docker ps -a -q)
     docker rm $(docker ps -a -q)
 
+6. Generate report
+	NODE_ENV=local TEST_CLIENT=iPhone6S_9_0_chrome node generateReport.js
+
 DEV. REMARK
 -----------
 

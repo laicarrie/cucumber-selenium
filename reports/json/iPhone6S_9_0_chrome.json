@@ -1,0 +1,1093 @@
+[
+  {
+    "description": "  As a job seeker\n  I want to apply for jobs\n  So that I can have a chance to get a job",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Apply",
+    "tags": [],
+    "uri": "/app/features/Apply.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Existing member without resume cannot start apply",
+        "tags": [
+          {
+            "line": 6,
+            "name": "@iOS"
+          },
+          {
+            "line": 6,
+            "name": "@only"
+          }
+        ],
+        "id": "apply;existing-member-without-resume-cannot-start-apply",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 1337
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am logged in to an account without resume",
+            "result": {
+              "status": "passed",
+              "duration": 3408
+            },
+            "line": 8,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:42"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I am on Job Ad page",
+            "result": {
+              "status": "passed",
+              "duration": 1108
+            },
+            "line": 9,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I click on Apply button",
+            "result": {
+              "status": "passed",
+              "duration": 1836
+            },
+            "line": 10,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should land on Complete Your Profile page",
+            "result": {
+              "status": "passed",
+              "duration": 139
+            },
+            "line": 11,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:118"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I should see App Store button",
+            "result": {
+              "status": "passed",
+              "duration": 116
+            },
+            "line": 12,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:88"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 96
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      }
+    ],
+    "id": "apply"
+  },
+  {
+    "description": "  As a job seeker\n  I want to login\n  So that I can use the features for logged in members",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Login",
+    "tags": [],
+    "uri": "/app/features/Login.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "line": 16,
+        "name": "Existing member can login with correct email & password",
+        "tags": [],
+        "id": "login;existing-member-can-login-with-correct-email-&-password",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 856
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Login page",
+            "result": {
+              "status": "passed",
+              "duration": 888
+            },
+            "line": 8,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I type in carrielai@seekasia.com on email field",
+            "result": {
+              "status": "passed",
+              "duration": 528
+            },
+            "line": 9,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:62"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I type in Carrie1234 on password field",
+            "result": {
+              "status": "passed",
+              "duration": 147
+            },
+            "line": 10,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:62"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click on Log in button",
+            "result": {
+              "status": "passed",
+              "duration": 7097
+            },
+            "line": 11,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should see Logged in header module",
+            "result": {
+              "status": "passed",
+              "duration": 124
+            },
+            "line": 12,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:81"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 89
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 29,
+        "name": "Existing member cannot login with incorrect email & password",
+        "tags": [],
+        "id": "login;existing-member-cannot-login-with-incorrect-email-&-password",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 805
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Login page",
+            "result": {
+              "status": "passed",
+              "duration": 3783
+            },
+            "line": 21,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I type in carrielai@seekasia.com on email field",
+            "result": {
+              "status": "passed",
+              "duration": 244
+            },
+            "line": 22,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:62"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I type in WrongPassword on password field",
+            "result": {
+              "status": "passed",
+              "duration": 227
+            },
+            "line": 23,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:62"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click on Log in button",
+            "result": {
+              "status": "passed",
+              "duration": 631
+            },
+            "line": 24,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "error alert pops up: Either the user name or password was entered incorrectly, please try again.",
+            "result": {
+              "status": "passed",
+              "duration": 2082
+            },
+            "line": 25,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:130"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 85
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 32,
+        "name": "User can go to create an account from Login page",
+        "tags": [],
+        "id": "login;user-can-go-to-create-an-account-from-login-page",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 804
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Login page",
+            "result": {
+              "status": "passed",
+              "duration": 753
+            },
+            "line": 33,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I click on Sign up button",
+            "result": {
+              "status": "passed",
+              "duration": 603
+            },
+            "line": 34,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should land on Sign up page",
+            "result": {
+              "status": "passed",
+              "duration": 118
+            },
+            "line": 35,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:118"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 80
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "User can go to Forgot password page from Login page",
+        "tags": [],
+        "id": "login;user-can-go-to-forgot-password-page-from-login-page",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 784
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Login page",
+            "result": {
+              "status": "passed",
+              "duration": 929
+            },
+            "line": 38,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I click on Forgot password button",
+            "result": {
+              "status": "passed",
+              "duration": 741
+            },
+            "line": 39,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should land on Forgot password page",
+            "result": {
+              "status": "passed",
+              "duration": 129
+            },
+            "line": 40,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:118"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 80
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      }
+    ],
+    "id": "login"
+  },
+  {
+    "description": "  As a job seeker\n  I want to search for jobs\n  So that I can see new posted jobs",
+    "keyword": "Feature",
+    "line": 1,
+    "name": "Search",
+    "tags": [],
+    "uri": "/app/features/Search.feature",
+    "elements": [
+      {
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Search for all jobs",
+        "tags": [],
+        "id": "search;search-for-all-jobs",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 1367
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Search page",
+            "result": {
+              "status": "passed",
+              "duration": 2647
+            },
+            "line": 8,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I click on Search jobs button",
+            "result": {
+              "status": "passed",
+              "duration": 104
+            },
+            "line": 9,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should land on Search Result page",
+            "result": {
+              "status": "passed",
+              "duration": 3671
+            },
+            "line": 10,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:118"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I should see Edit Search button",
+            "result": {
+              "status": "passed",
+              "duration": 244
+            },
+            "line": 11,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:88"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "the Search criteria contains all jobs",
+            "result": {
+              "status": "passed",
+              "duration": 159
+            },
+            "line": 12,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:112"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 182
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Search by keyword",
+        "tags": [
+          {
+            "line": 14,
+            "name": "@only"
+          }
+        ],
+        "id": "search;search-by-keyword",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 829
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Search page",
+            "result": {
+              "status": "passed",
+              "duration": 725
+            },
+            "line": 16,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I type in QA Analyst on Keyword field",
+            "result": {
+              "status": "passed",
+              "duration": 431
+            },
+            "line": 17,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:62"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click on Search jobs button",
+            "result": {
+              "status": "passed",
+              "duration": 8860
+            },
+            "line": 18,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should land on Search Result page",
+            "result": {
+              "status": "passed",
+              "duration": 128
+            },
+            "line": 19,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:118"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "the Search criteria contains QA Analyst",
+            "result": {
+              "status": "passed",
+              "duration": 136
+            },
+            "line": 20,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:112"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 82
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "Search by keyword",
+        "tags": [
+          {
+            "line": 14,
+            "name": "@only"
+          }
+        ],
+        "id": "search;search-by-keyword",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 713
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Search page",
+            "result": {
+              "status": "passed",
+              "duration": 913
+            },
+            "line": 16,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I type in Accountant on Keyword field",
+            "result": {
+              "status": "passed",
+              "duration": 374
+            },
+            "line": 17,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:62"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click on Search jobs button",
+            "result": {
+              "status": "passed",
+              "duration": 665
+            },
+            "line": 18,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should land on Search Result page",
+            "result": {
+              "status": "passed",
+              "duration": 127
+            },
+            "line": 19,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:118"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "the Search criteria contains Accountant",
+            "result": {
+              "status": "passed",
+              "duration": 113
+            },
+            "line": 20,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:112"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 84
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "Search by job function ( level one job function )",
+        "tags": [],
+        "id": "search;search-by-job-function-(-level-one-job-function-)",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 768
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Search page",
+            "result": {
+              "status": "passed",
+              "duration": 2611
+            },
+            "line": 29,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I select Accounting from Job function list",
+            "result": {
+              "status": "passed",
+              "duration": 256
+            },
+            "line": 30,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:69"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click on Search jobs button",
+            "result": {
+              "status": "passed",
+              "duration": 1828
+            },
+            "line": 31,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should land on Search Result page",
+            "result": {
+              "status": "passed",
+              "duration": 118
+            },
+            "line": 32,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:118"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "the Search criteria contains Accounting",
+            "result": {
+              "status": "passed",
+              "duration": 100
+            },
+            "line": 33,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:112"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 86
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "Search by job function ( level two job function )",
+        "tags": [],
+        "id": "search;search-by-job-function-(-level-two-job-function-)",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 715
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Search page",
+            "result": {
+              "status": "passed",
+              "duration": 845
+            },
+            "line": 29,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I select Accountant from Job function list",
+            "result": {
+              "status": "passed",
+              "duration": 464
+            },
+            "line": 30,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:69"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "I click on Search jobs button",
+            "result": {
+              "status": "passed",
+              "duration": 1577
+            },
+            "line": 31,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "I should land on Search Result page",
+            "result": {
+              "status": "passed",
+              "duration": 100
+            },
+            "line": 32,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:118"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "the Search criteria contains Accountant",
+            "result": {
+              "status": "passed",
+              "duration": 105
+            },
+            "line": 33,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:112"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 93
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      },
+      {
+        "keyword": "Scenario",
+        "line": 41,
+        "name": "Change salary from monthly to hourly",
+        "tags": [],
+        "id": "search;change-salary-from-monthly-to-hourly",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Before",
+            "result": {
+              "status": "passed",
+              "duration": 762
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:7"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "name": "I am on Search page",
+            "result": {
+              "status": "passed",
+              "duration": 651
+            },
+            "line": 42,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:24"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "Monthly is selected",
+            "result": {
+              "status": "passed",
+              "duration": 841
+            },
+            "line": 43,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:54"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "name": "I click on Hourly button",
+            "result": {
+              "status": "passed",
+              "duration": 1202
+            },
+            "line": 44,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:75"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "name": "Hourly is selected",
+            "result": {
+              "status": "passed",
+              "duration": 403
+            },
+            "line": 45,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:54"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "minimum salary ranges from 0 to 600",
+            "result": {
+              "status": "passed",
+              "duration": 152
+            },
+            "line": 46,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:138"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "name": "maximum salary ranges from 60 to 600+",
+            "result": {
+              "status": "passed",
+              "duration": 133
+            },
+            "line": 47,
+            "match": {
+              "location": "/app/features/step_definitions/browser_steps.js:138"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "After",
+            "result": {
+              "status": "passed",
+              "duration": 85
+            },
+            "hidden": true,
+            "match": {
+              "location": "/app/features/step_definitions/hooks.js:13"
+            }
+          }
+        ]
+      }
+    ],
+    "id": "search"
+  }
+]

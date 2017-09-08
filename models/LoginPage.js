@@ -1,4 +1,4 @@
-let Page = require('./Page.js')
+let Page = require('../framework/models/Page.js')
 
 class LoginPage extends Page {
 
@@ -9,7 +9,7 @@ class LoginPage extends Page {
 		"ID": this.by.xpath('//title[contains(text(), "Already have a jobsDB Profile? Login")]'),
 		"email field": this.by.id('uName'),
 		"password field": this.by.id('uPwd'),
-		"Log in button": this.by.xpath('//input[contains(@value,"Log in")]'),
+		"Log in": this.by.xpath('//input[contains(@value,"Log in")]'),
 		"Forgot password": this.by.linkText('Forgot password?'),
 		"Sign up": this.by.linkText('Sign up'),
 		"error alert prompt": this.by.id('error_message')
@@ -36,7 +36,7 @@ class LoginPage extends Page {
       })
       .then( () => {
 
-        return this.click('Log in button')
+        return this.click('Log in')
       });
   }
 

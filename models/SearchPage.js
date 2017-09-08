@@ -1,4 +1,4 @@
-let Page = require('./Page.js')
+let Page = require('../framework/models/Page.js')
 
 class SearchPage extends Page {
 
@@ -14,7 +14,7 @@ class SearchPage extends Page {
 		"minimum salary": this.by.id('salaryF'),
 		"maximum salary": this.by.id('salaryT'),
 		"More options": this.by.linkText('More options'),
-		"Search jobs button": this.by.id('submitButton'),
+		"Search jobs": this.by.id('submitButton'),
 		"Location list": this.by.id('locationId'),
 		"Career level from list": this.by.id('careerLevelFromId'),
 		"Career level to list": this.by.id('careerLevelToId'),

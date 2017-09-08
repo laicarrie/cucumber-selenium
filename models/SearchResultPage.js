@@ -1,14 +1,13 @@
-let Page = require('./Page.js')
+let Page = require('../framework/models/Page.js')
 
 class SearchResultPage extends Page {
 
   get elements() {
 
     return {
-//       	"ID": this.by.xpath('//title[contains(text(), "jobs for")]'),
-       	"ID": this.by.xpath('//*[@id="searchResultPage"]'),
+       	"ID": this.by.id('searchResultPage'),
 //      "Search jobs": this.by.xPath("//input[contains(@value,'Log in')]")
-		"Edit Search button": this.by.linkText('Edit Search'),
+		"Edit Search": this.by.linkText('Edit Search'),
 		"keyword at the title": this.by.xpath('//title[contains(text(), `${keyword}`)]'),
 		"job(s) for": this.by.xpath('//*[@id="searchResultPage"]/div[1]/h1/span'),
 		"Job Ad title": this.by.className('job_detail_link'),

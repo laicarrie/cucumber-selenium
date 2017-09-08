@@ -3,7 +3,7 @@ Feature: Apply
   I want to apply for jobs
   So that I can have a chance to get a job
   
-@iOS
+@iOS @only
   Scenario: Existing member without resume cannot start apply
     Given I am logged in to an account without resume
     And I am on Job Ad page

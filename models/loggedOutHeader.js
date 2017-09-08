@@ -1,4 +1,4 @@
-let View = require('./View.js')
+let View = require('../framework/models/View.js')
 
 class LoggedOutHeader extends View {
 
