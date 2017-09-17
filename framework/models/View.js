@@ -1,5 +1,6 @@
 let {until, By} = require('selenium-webdriver')
 
+
 class View {
 
   constructor(driver) {
@@ -9,29 +10,32 @@ class View {
   }
 
   get by() {
-  
+
     return By
-  
+
   }
 
   get elements() {
-  
-    return { } 
+
+    return { }
 
   }
+
 
   click(elementId) {
 
     let element = this.elements[elementId]
- 
+
     element = element ? element : elementId
 
-    return this.driver.findElement(element).then(function(element) {
+    this.driver.executeScript("arguments[0].scrollIntoView()", this.driver.findElement(element))
 
-      return element.click();
+    return this.driver.findElement(element)
+    .then(function(element) {
 
-    });
-  
+      return element.click()
+    })
+
   }
 
   waitAndLocate(elementId, timeout = 5000) {
@@ -41,14 +45,14 @@ class View {
     element = element ? element : elementId
 
     var condition = until.elementLocated(element);
-    return this.driver.wait(condition, timeout); 
+    return this.driver.wait(condition, timeout);
 
   }
 
   waitAndFill(elementId, keyin, timeout = 5000) {
 
     return this.waitAndLocate(elementId, timeout).sendKeys(keyin)
-  
+
   }
 
   clickAndSelect(elementId, option, timeout = 5000) {
@@ -102,6 +106,19 @@ class View {
       .then( () => {
         return this.driver.switchTo().alert().accept()
       })
+  }
+
+  getListLength (elementId){
+      let element = this.elements[elementId]
+
+      element = element ? element : elementId
+
+      return this.driver.findElements(element).options.length
+/*      then ( function(element) {
+        let length = element.options.length
+        console.log(length)
+        return length
+      })*/
   }
 
 

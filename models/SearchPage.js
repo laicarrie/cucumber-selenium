@@ -21,14 +21,14 @@ class SearchPage extends Page {
 		"Employment type list": this.by.id('employmentTermId'),
 		"Industry list": this.by.id('industryId')
     }
-  
+
 
   }
 
   get url() {
-  
-    return 'https://m.jobsdb.com/en-hk/search.do'
-  
+
+    return app.config.domain + '/en-hk/search.do'
+
   }
 // //*[@id="salaryF"]/option[1]
   checkSalaryMin (elementID, from){

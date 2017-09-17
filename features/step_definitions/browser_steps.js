@@ -14,18 +14,31 @@ defineSupportCode(function({Given, When, Then}) {
     "Forgot password page": ForgotPasswordPage
   }
 
-  */
-
   let accountMapping = {
-    "account": ["carrielai@seekasia.com", "Carrie1234"],
+    "account with resume": ["carrielai@seekasia.com", "Carrie1234"],
     "account without resume": ["jobsdbcarrielai4@gmail.com", "carrie1234"]
   }
+
+  */
 
   Given("I am on {page}", function(viewClass){
     let view = new viewClass(app.driver)
 
     this.view = view
     return this.view.go()
+  });
+
+  Given("I go to {page}", function(viewClass){
+    let view = new viewClass(app.driver)
+
+    this.view = view
+    return this.view.go()
+  });
+
+  Given("I go to the first job", function(){
+
+    return this.view.click("1st Job Ad")
+
   });
 
 /*
@@ -39,10 +52,10 @@ defineSupportCode(function({Given, When, Then}) {
   });
   */
 
-  Given('I am logged in to an {string}', function(text) {
-    let account = accountMapping[text]
+  Given('I am logged in with {string} and {string}', function(email, password) {
+/*    let account = accountMapping[text]
     let email = account[0]
-    let password = account[1]
+    let password = account[1]  */
     let view = new LoginPage(app.driver)
 
     this.view = view
@@ -71,10 +84,18 @@ defineSupportCode(function({Given, When, Then}) {
     return this.view.clickAndSelect(optionlist, text, 5000)
   });
 
+/*
+  When('I select a resume', function () {
+    let optionsLength = this.view.getListLength("Resume list")
+    let select = Math.floor((Math.random() * optionsLength) + 1);
+    return this.view.click("#resume option:nth-child(select)");
+  });
+  */
 
-  When('I click on {string} button', function (text) {
 
-    return this.view.click(text)  
+  When('I click on {string}', function (text) {
+
+    return this.view.click(text)
   });
 
 
@@ -82,7 +103,7 @@ defineSupportCode(function({Given, When, Then}) {
 
     let view = new viewClass(app.driver)
     view.screenshot("123")
-    return view.exist() 
+    return view.exist()
   });
 
   Then('I should see {string} button', function (text) {
@@ -92,7 +113,7 @@ defineSupportCode(function({Given, When, Then}) {
       return this.view.waitAndLocate(text, 5000)
     })
   });
-  
+
 /*
   Then('I should see {module}', function (viewClass) {
     let checkColon = /:/.test(viewClass)
@@ -100,14 +121,14 @@ defineSupportCode(function({Given, When, Then}) {
     if ( checkColon ) {
       let view = new viewClass(app.driver)
       view.screenshot("123")
-      return view.exist() 
-    } 
+      return view.exist()
+    }
 
     this.view.screenshot(viewClass)
     return this.view.waitAndLocate(viewClass, 5000)
 
   });*/
-  
+
 
   Then('the Search criteria contains {string}', function (text) {
     let criteria = this.view.containSearchCriteria(text)
@@ -120,10 +141,10 @@ defineSupportCode(function({Given, When, Then}) {
     let view = new viewClass(app.driver)
     this.view = view
 
-    return view.exist()
+    return this.view.exist()
     .then(() => {
 
-      return view.screenshot("456")
+      return this.view.screenshot("456")
     })
   });
 

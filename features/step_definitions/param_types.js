@@ -11,11 +11,12 @@ defineSupportCode(function({BeforeAll, defineParameterType}) {
       "Job Ad page": JobAdPage,
       "Complete Your Profile page": CompleteYourProfilePage,
       "Sign up page": SignUpPage,
-      "Forgot password page": ForgotPasswordPage
+      "Forgot password page": ForgotPasswordPage,
+      "Apply page": ApplyPage
     }
-    
+
     return viewMapping[s]
-  
+
   }
 
   let moduleTransform = function(s) {
@@ -26,7 +27,7 @@ defineSupportCode(function({BeforeAll, defineParameterType}) {
     if (viewMapping[s]) { return viewMapping[s] }
 
     return s
-  
+
   }
 
   defineParameterType( {
@@ -49,4 +50,3 @@ defineSupportCode(function({BeforeAll, defineParameterType}) {
   })
 
 })
-

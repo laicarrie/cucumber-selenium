@@ -5,7 +5,7 @@ class SignUpPage extends Page {
   get elements() {
 
     return {
-       
+
 		"ID": this.by.xpath('//title[contains(text(), "Present yourself professionally to hirers with a jobsDB profile")]'),
 		"App Store": this.by.xpath("//img[contains(@src, '/jobsdb/xhtml_res/images/app_upsell/app_upsell_app_store.png')]"),
     "Google Play": this.by.xpath("//img[contains(@src, '/jobsdb/xhtml_res/images/app_upsell/app_upsell_play_store.png')]"),
@@ -18,13 +18,13 @@ class SignUpPage extends Page {
 		"Sign up": this.by.xpath('//input[contains(@value,"Sign up")]'),
 		"error alert prompt": this.by.id('error_message')
     }
-  
+
   }
 
   get url() {
-  
-    return 'https://m.jobsdb.com/en-hk/register.do'
-  
+
+    return app.config.domain + '/en-hk/register.do'
+
   }
 
 

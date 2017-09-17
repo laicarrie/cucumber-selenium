@@ -7,8 +7,8 @@ DOCKERIZED TEST
 Please google how to install docker in your host 
 
 2. start the whole architecture
-
-    docker-compose up
+    (*when need to rebuild) docker-compose build
+    docker-compose up 
 
 3. get inside the dev-node container. e.g: docker exec -it cucumber_dev-node_1 /bin/bash
  

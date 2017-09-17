@@ -5,7 +5,7 @@ class LoginPage extends Page {
   get elements() {
 
     return {
-       
+
 		"ID": this.by.xpath('//title[contains(text(), "Already have a jobsDB Profile? Login")]'),
 		"email field": this.by.id('uName'),
 		"password field": this.by.id('uPwd'),
@@ -14,13 +14,13 @@ class LoginPage extends Page {
 		"Sign up": this.by.linkText('Sign up'),
 		"error alert prompt": this.by.id('error_message')
     }
-  
+
   }
 
   get url() {
-  
-    return 'https://m.jobsdb.com/en-hk/login.do'
-  
+
+    return app.config.domain + '/en-hk/login.do'
+
   }
 
 
