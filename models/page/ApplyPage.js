@@ -1,4 +1,4 @@
-let Page = require('../framework/models/Page.js')
+let Page = require('../../framework/models/Page.js')
 
 class ApplyPage extends Page {
 

@@ -1,4 +1,4 @@
-let Page = require('../framework/models/Page.js')
+let Page = require('../../framework/models/Page.js')
 
 class JobAdPage extends Page {
 
@@ -24,7 +24,7 @@ class JobAdPage extends Page {
 //    if (env == "prod") { return 'https://m.jobsdb.com/en-hk/jobad/english-teacher-100003005557944' }
 //    return 'https://v8.preview.m.jobsdb.com/en-hk/jobad/carrie-branded-ad-100003000211873'
 //    return this.searchAndGoToFirstJobID()
-    return app.config.domain + '/en-hk/jobad/english-teacher-100003005557944'
+    return app.config.domain + '/jobad/english-teacher-100003005557944'
 
   }
 /*

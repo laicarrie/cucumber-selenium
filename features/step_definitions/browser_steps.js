@@ -1,25 +1,8 @@
 var seleniumWebdriver = require('selenium-webdriver');
 var {defineSupportCode} = require('cucumber');
 
+
 defineSupportCode(function({Given, When, Then}) {
-/*
-  let viewMapping = {
-    "Login page": LoginPage,
-    "Search page": SearchPage,
-    "Logged in header": loggedInHeader,
-    "Search Result page": SearchResultPage,
-    "Job Ad page": JobAdPage,
-    "Complete Your Profile page": CompleteYourProfilePage,
-    "Sign up page": SignUpPage,
-    "Forgot password page": ForgotPasswordPage
-  }
-
-  let accountMapping = {
-    "account with resume": ["carrielai@seekasia.com", "Carrie1234"],
-    "account without resume": ["jobsdbcarrielai4@gmail.com", "carrie1234"]
-  }
-
-  */
 
   Given("I am on {page}", function(viewClass){
     let view = new viewClass(app.driver)
@@ -35,10 +18,10 @@ defineSupportCode(function({Given, When, Then}) {
     return this.view.go()
   });
 
-  Given("I go to the first job", function(){
+  Given("I go to the {order} Job Ad", function(order){
+    let number = parseInt(order) - 1
 
-    return this.view.click("1st Job Ad")
-
+    return this.view.goToNthJobAd(number)
   });
 
 /*
@@ -64,24 +47,35 @@ defineSupportCode(function({Given, When, Then}) {
   });
 
 
-  Given('{string} is selected', function(text) {
-    return this.view.click(text)
-    .then( () => {
-      return this.view.screenshot(text)
-    })
+  Given('{noQuoteString} is selected', function(text) {
+//    return this.view.click(text)
+    if (text == "Monthly") {
+      return this.view.checkSalaryMin("minimum salary", "0")
+      .then( () => {
+        return this.view.checkSalaryMax("minimum salary", "120000")
+      })
+
+    } else if (text == "Hourly") {
+      return this.view.checkSalaryMin("minimum salary", "0")
+      .then( () => {
+        return this.view.checkSalaryMax("minimum salary", "600")
+      })
+
+    }
   });
 
 
-  When('I type in {string} on {string}', function (text, inputfield) {
+  When('I type in {noQuoteString} on {noQuoteString}', function (text, inputfield) {
 
-    return this.view.waitAndFill(inputfield, text, 5000)
+//    return this.view.waitAndFill(inputfield, text, 5000)
+    return this.view.fill(inputfield, text)
 //   return this.driver.findElement({xpath: `//input[contains(@value,'${text}')]`})
   });
 
 
-  When('I select {string} from {string}', function (text, optionlist) {
+  When('I select {noQuoteString} from {noQuoteString}', function (text, optionlist) {
 
-    return this.view.clickAndSelect(optionlist, text, 5000)
+    return this.view.selectFromList(text, 5000)
   });
 
 /*
@@ -93,75 +87,53 @@ defineSupportCode(function({Given, When, Then}) {
   */
 
 
-  When('I click on {string}', function (text) {
+  When('I click on {noQuoteString}', function (text) {
 
-    return this.view.click(text)
-  });
-
-
-  Then('I should see {module}', function (viewClass) {
-
-    let view = new viewClass(app.driver)
-    view.screenshot("123")
-    return view.exist()
-  });
-
-  Then('I should see {string} button', function (text) {
-
-    return this.view.screenshot(text)
-    .then ( () => {
-      return this.view.waitAndLocate(text, 5000)
+    return this.view.scrollTo(text)
+    .then( () => {
+      return this.view.click(text)
     })
   });
 
-/*
-  Then('I should see {module}', function (viewClass) {
-    let checkColon = /:/.test(viewClass)
+  Then('I take snapshot', function () {
 
-    if ( checkColon ) {
-      let view = new viewClass(app.driver)
-      view.screenshot("123")
-      return view.exist()
-    }
+    return this.view.snapShot(this)
+  });
 
-    this.view.screenshot(viewClass)
-    return this.view.waitAndLocate(viewClass, 5000)
+  Then('I should see {noQuoteString} button', function (text) {
 
-  });*/
-
-
-  Then('the Search criteria contains {string}', function (text) {
-    let criteria = this.view.containSearchCriteria(text)
-    return this.view.screenshot("jobs(s) for " + text)
+//    return this.view.waitAndLocate(text, 5000)
+    return this.view.locate(text, 5000)
   });
 
 
+  Then('the Search criteria contains {noQuoteString}', function (text) {
+    return this.view.containSearchCriteria(text)
+  });
+
+  Then('I should see {module}', function (viewClass) {
+    let view = new viewClass(app.driver)
+    return view.exist()
+  });
+
   Then('I should land on {page}', function (viewClass) {
-//    let viewClass = viewMapping[text]
     let view = new viewClass(app.driver)
     this.view = view
 
     return this.view.exist()
-    .then(() => {
-
-      return this.view.screenshot("456")
-    })
   });
 
-  Then('error alert pops up: {string}', function (text) {
+  Then('error alert pops up: {noQuoteString}', function (text) {
 
     return this.view.checkAlertMsg(text, 5000)
-    .then( () => {
-      return this.view.screenshot("error")
-    })
   });
 
-  Then('{string} ranges from {string} to {string}', function (elementID, from, to) {
+  Then('{noQuoteString} ranges from {noQuoteString} to {noQuoteString}', function (elementId, from, to) {
 
-    return this.view.checkSalaryMin(elementID, from)
+    return this.view.checkSalaryMin(elementId, from)
     .then( () => {
 
-      return this.view.checkSalaryMax(elementID, to)
+      return this.view.checkSalaryMax(elementId, to)
     })
   });
 

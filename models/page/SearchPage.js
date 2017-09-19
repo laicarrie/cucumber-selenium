@@ -1,4 +1,4 @@
-let Page = require('../framework/models/Page.js')
+let Page = require('../../framework/models/Page.js')
 
 class SearchPage extends Page {
 
@@ -27,7 +27,7 @@ class SearchPage extends Page {
 
   get url() {
 
-    return app.config.domain + '/en-hk/search.do'
+    return app.config.domain + '/search.do'
 
   }
 // //*[@id="salaryF"]/option[1]
@@ -36,7 +36,7 @@ class SearchPage extends Page {
   	if (elementID == "minimum salary") { minOptionPath = this.by.xpath('//*[@id="salaryF"]/option[contains(@value, "0")]') }
   	if (elementID == "maximum salary") { minOptionPath = this.by.xpath('//option[contains(@value, "10999")]') }
 
-  	return this.waitAndLocate(minOptionPath, 5000).getText()
+  	return this.locate(minOptionPath, 5000).getText()
     .then( (text) => {
     	if (text == from) { return }
   	})
@@ -47,7 +47,7 @@ class SearchPage extends Page {
   	if (elementID == "minimum salary") { maxOptionPath = this.by.xpath('//option[contains(@value, "120000")]')}
   	if (elementID == "maximum salary") { maxOptionPath = this.by.xpath('//option[contains(@value, "2147483647")]') }
 
-  	return this.waitAndLocate(maxOptionPath, 5000).getText()
+  	return this.locate(maxOptionPath, 5000).getText()
   	.then( (text) => {
   		if (text == to) { return }
   	})

@@ -6,13 +6,24 @@ let seleniumWebdriver = require('selenium-webdriver')
 let chrome = require('selenium-webdriver/chrome')
 let firefox = require('selenium-webdriver/firefox')
 let reporter = require('cucumber-html-reporter')
+let chromedriver = require('chromedriver')
 
 
 class App {
 
   constructor() {
 
+    this._defaultPageRouting = {}
+    this._defaultModuleRouting = {}
+    this._defaultTransformerRouting = {}
+
   }
+
+  get defaultPageRouting() {return this._defaultPageRouting}
+
+  get defaultModuleRouting() {return this._defaultModuleRouting}
+
+  get defaultTransformerRouting() {return this._defaultTransformerRouting}
 
   importDir(dirPath) {
 
@@ -46,14 +57,52 @@ class App {
 
   loadPage() {
 
-    this.models = this.importDir('./models')
+    this.pages = this.importDir('./models/page')
 
+    Object.keys(this.pages).forEach((key) => {
+
+      if (key.match(/Page$/)){
+
+        //conversion e.g. SearchResultPage to Search Result
+        let tmpKey = key.replace('Page', '').replace(/([A-Z])/g, ' $1').substring(1)
+        this._defaultPageRouting[tmpKey] = this.pages[key]
+      }
+    })
+  }
+
+  loadModule() {
+
+    this.modules = this.importDir('./models/module')
+
+    Object.keys(this.modules).forEach((key) => {
+
+      if (key.match(/Module$/)){
+
+        //conversion e.g. SearchResultPage to Search Result
+        let tmpKey = key.replace('Module', '').replace(/([A-Z])/g, ' $1').substring(1)
+        this._defaultModuleRouting[tmpKey] = this.modules[key]
+      }
+    })
+  }
+
+  loadTransformer(){
+    this.transformers = this.importDir('./models/transformer')
+    Object.keys(this.transformers).forEach((key) => {
+      if (key.match(/Transformer$/)) {
+
+        //conversion PageTransformer to Page
+        let tmpKey = key.replace('Transformer', '').replace(/([A-Z])/g, ' $1').substring(1)
+        this._defaultTransformerRouting[tmpKey] = this.transformers[key]
+      }
+    })
   }
 
   prepare() {
 
     this.loadConfig()
     this.loadPage()
+    this.loadModule()
+    this.loadTransformer()
 
   }
 
@@ -61,9 +110,21 @@ class App {
 
     context.app = this
 
-    Object.keys(this.models).forEach( (key) => {
+    Object.keys(this.pages).forEach( (key) => {
 
-      context[key] = this.models[key]
+      context[key] = this.pages[key]
+
+    })
+
+    Object.keys(this.modules).forEach( (key) => {
+
+      context[key] = this.modules[key]
+
+    })
+
+    Object.keys(this.transformers).forEach( (key) => {
+
+      context[key] = this.transformers[key]
 
     })
 
@@ -74,18 +135,23 @@ class App {
     let server = this.config.server
     let client = this.config.client[this.config.testClient]
 
-    let opts
-    if (client.browser == 'chrome') { opts = new chrome.Options(); }
-    if (client.browser == 'firefox') { opts = new firefox.Options(); }
+    if (client.browser == 'localchrome') {
 
-    if (client.optsArguments) { opts.addArguments(client.optsArguments) }
-
-    let driver = new seleniumWebdriver.Builder()
-        .withCapabilities(opts.toCapabilities())
-        .usingServer(`http://${server.host}:${server.port}/wd/hub`)
+      this.driver = new seleniumWebdriver.Builder()
+        .forBrowser('chrome')
         .build()
+    }else {
+      let opts
+      if (client.browser == 'chrome') { opts = new chrome.Options(); }
+      if (client.browser == 'firefox') { opts = new firefox.Options(); }
 
-    this.driver = driver
+      if (client.optsArguments) { opts.addArguments(client.optsArguments) }
+
+      this.driver = new seleniumWebdriver.Builder()
+          .withCapabilities(opts.toCapabilities())
+          .usingServer(`http://${server.host}:${server.port}/wd/hub`)
+          .build()
+    }
 
     if (client.width && client.height) { this.driver.manage().window().setSize(client.width, client.height) }
     return this.driver
@@ -96,6 +162,16 @@ class App {
 
     return this.driver.quit();
 
+  }
+
+  //helper
+  trans(type, key){
+
+    let transformerClass = app.defaultTransformerRouting[type]
+
+    let transformer = new transformerClass()
+    let value = transformer.transform(key)
+    return value ? value : key
   }
 
 

@@ -7,6 +7,12 @@ module.exports = {
   	height: 736
   },
 
+  iPhone6S_9_0_localchrome: {
+    browser: 'localchrome',
+    width: 414,
+    height: 736
+  },
+
   SamsungA7_6_0_chrome: {
     browser: 'chrome',
     optsArguments: ['user-agent="Mozilla/5.0 (Linux; Android 6.0.1; SAMSUNG SM-G930T1 Build/MMB29M) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/4.0 Chrome/44.0.2403.133 Mobile Safari/537.36"'],
@@ -15,5 +21,3 @@ module.exports = {
   }
 
 }
-
-

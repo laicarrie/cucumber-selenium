@@ -1,0 +1,1494 @@
+[
+  {
+    "description": "  As a job seeker\n  I want to apply for jobs\n  So that I can have a chance to get a job",
+    "keyword": "Feature",
+    "name": "Apply",
+    "line": 1,
+    "id": "apply",
+    "tags": [],
+    "uri": "features/Apply_with_resume.feature",
+    "elements": [
+      {
+        "id": "apply;existing-member-without-resume-can-start-apply",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Existing member without resume can start apply",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 64,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am on Login page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I type in \"carrielai+140@seekasia.com\" on \"email field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I type in \"carrie1234\" on \"password field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I click on \"Log in\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I go to Search page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:31"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I click on \"Search jobs\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I should land on Search Result page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click on \"1st Job Ad\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I should land on Job Ad page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I click on \"Apply\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should land on Apply page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 3,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "apply;existing-member-without-resume-can-choose-resume",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Existing member without resume can choose resume",
+        "tags": [
+          {
+            "name": "@onlyy",
+            "line": 23
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 12,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am on Login page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I type in \"carrielai+140@seekasia.com\" on \"email field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I type in \"carrie1234\" on \"password field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I click on \"Log in\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I go to Search page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:31"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I click on \"Search jobs\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I should land on Search Result page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click on \"1st Job Ad\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 26,
+            "name": "I should land on Job Ad page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 27,
+            "name": "I click on \"Apply\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "I should land on Apply page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "description": "  As a job seeker\n  I want to apply for jobs\n  So that I can have a chance to get a job",
+    "keyword": "Feature",
+    "name": "Apply",
+    "line": 1,
+    "id": "apply",
+    "tags": [],
+    "uri": "features/Apply_without_resume.feature",
+    "elements": [
+      {
+        "id": "apply;existing-member-without-resume-cannot-start-apply",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Existing member without resume cannot start apply",
+        "tags": [
+          {
+            "name": "@iOS",
+            "line": 16
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 8,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "I am on Login page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I type in \"carrielai+300@seekasia.com\" on \"email field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "I type in \"carrie1234\" on \"password field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I click on \"Log in\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I go to Search page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:31"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I click on \"Search jobs\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I should land on Search Result page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I click on \"1st Job Ad\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "I should land on Job Ad page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "I click on \"Apply\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:96"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 21,
+            "name": "I should land on Complete Your Profile page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "I should see \"App Store\" button",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:109"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 4,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "description": "  As a job seeker\n  I want to login\n  So that I can use the features for logged in members",
+    "keyword": "Feature",
+    "name": "Login",
+    "line": 1,
+    "id": "login",
+    "tags": [],
+    "uri": "features/Login.feature",
+    "elements": [
+      {
+        "id": "login;existing-member-can-login-with-correct-email-&-password",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Existing member can login with correct email & password",
+        "tags": [
+          {
+            "name": "@prod",
+            "line": 14
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 10,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I am on Login page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I type in \"carrielai@seekasia.com\" on \"email field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I type in \"Carrie1234\" on \"password field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I click on \"Log in\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I should see Logged in header module",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:102"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 4,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "login;existing-member-can-login-with-correct-email-&-password",
+        "keyword": "Scenario",
+        "line": 23,
+        "name": "Existing member can login with correct email & password",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 20
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 12,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I am on Login page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I type in \"carrielai+140@seekasia.com\" on \"email field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "I type in \"carrie1234\" on \"password field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I click on \"Log in\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "I should see Logged in header module",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:102"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "login;existing-member-cannot-login-with-incorrect-email-&-password",
+        "keyword": "Scenario",
+        "line": 35,
+        "name": "Existing member cannot login with incorrect email & password",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 25
+          },
+          {
+            "name": "@only",
+            "line": 25
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 7,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "I am on Login page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 28,
+            "name": "I type in \"carrielai@seekasia.com\" on \"email field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 29,
+            "name": "I type in \"WrongPassword\" on \"password field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "I click on \"Log in\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 31,
+            "name": "error alert pops up: \"Either the user name or password was entered incorrectly, please try again.\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:151"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 3,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "login;user-can-go-to-create-an-account-from-login-page",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "User can go to create an account from Login page",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 37
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 7,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 39,
+            "name": "I am on Login page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 40,
+            "name": "I click on \"Sign up\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 41,
+            "name": "I should land on Sign up page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 2,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "login;user-can-go-to-forgot-password-page-from-login-page",
+        "keyword": "Scenario",
+        "line": 44,
+        "name": "User can go to Forgot password page from Login page",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 43
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 7,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 45,
+            "name": "I am on Login page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 46,
+            "name": "I click on \"Forgot password\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 47,
+            "name": "I should land on Forgot password page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "description": "  As a job seeker\n  I want to search for jobs\n  So that I can see new posted jobs",
+    "keyword": "Feature",
+    "name": "Search",
+    "line": 1,
+    "id": "search",
+    "tags": [],
+    "uri": "features/Search.feature",
+    "elements": [
+      {
+        "id": "search;search-for-all-jobs",
+        "keyword": "Scenario",
+        "line": 7,
+        "name": "Search for all jobs",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 6
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 7,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "I am on Search page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "I click on \"Search jobs\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "I should land on Search Result page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I should see \"Edit Search\" button",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:109"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "the Search criteria contains \"all jobs\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:133"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "search;search-by-keyword",
+        "keyword": "Scenario",
+        "line": 24,
+        "name": "Search by keyword",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 14
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 6,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 16,
+            "name": "I am on Search page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 17,
+            "name": "I type in \"QA Analyst\" on \"Keyword field\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:75"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I click on \"Search jobs\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "I should land on Search Result page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "the Search criteria contains \"QA Analyst\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:133"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 4,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "search;search-by-job-function-(-level-one-job-function-)",
+        "keyword": "Scenario",
+        "line": 37,
+        "name": "Search by job function ( level one job function )",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 27
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 9,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "I am on Search page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "I select \"Accounting\" from \"Job function list\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:82"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "I click on \"Search jobs\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "I should land on Search Result page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "the Search criteria contains \"Accounting\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:133"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "search;search-by-job-function-(-level-two-job-function-)",
+        "keyword": "Scenario",
+        "line": 38,
+        "name": "Search by job function ( level two job function )",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 27
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 7,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 29,
+            "name": "I am on Search page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 30,
+            "name": "I select \"Accountant\" from \"Job function list\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:82"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "I click on \"Search jobs\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "I should land on Search Result page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:139"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "the Search criteria contains \"Accountant\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:133"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 2,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      },
+      {
+        "id": "search;change-salary-from-monthly-to-hourly",
+        "keyword": "Scenario",
+        "line": 41,
+        "name": "Change salary from monthly to hourly",
+        "tags": [
+          {
+            "name": "@stg",
+            "line": 40
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:7"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 6,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 42,
+            "name": "I am on Search page",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:24"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 43,
+            "name": "\"Monthly\" is selected",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:67"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 44,
+            "name": "I click on \"Hourly\" button",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 45,
+            "name": "\"Hourly\" is selected",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:67"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "\"minimum salary\" ranges from \"0\" to \"600\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:159"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 47,
+            "name": "\"maximum salary\" ranges from \"60\" to \"600+\"",
+            "match": {
+              "location": "features/step_definitions/browser_steps.js:159"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "features/step_definitions/hooks.js:13"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1,
+              "error_message": "Error: Server terminated early with status 127\n    at Error (native)\n    at earlyTermination.catch.e (/app/node_modules/selenium-webdriver/remote/index.js:252:52)\n    at process._tickCallback (internal/process/next_tick.js:109:7)\nFrom: Task: WebDriver.createSession()\n    at Function.createSession (/app/node_modules/selenium-webdriver/lib/webdriver.js:769:24)\n    at Function.createSession (/app/node_modules/selenium-webdriver/chrome.js:761:15)\n    at createDriver (/app/node_modules/selenium-webdriver/index.js:170:33)\n    at Builder.build (/app/node_modules/selenium-webdriver/index.js:642:16)\n    at App.initDriver (/app/app.js:117:10)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.manage().window().setSize(414, 736)\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at Window.setSize (/app/node_modules/selenium-webdriver/lib/webdriver.js:1677:25)\n    at App.initDriver (/app/app.js:131:72)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:9:16)\nFrom: Task: WebDriver.quit()\n    at thenableWebDriverProxy.schedule (/app/node_modules/selenium-webdriver/lib/webdriver.js:807:17)\n    at thenableWebDriverProxy.quit (/app/node_modules/selenium-webdriver/lib/webdriver.js:840:23)\n    at World.<anonymous> (/app/features/step_definitions/hooks.js:15:23)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

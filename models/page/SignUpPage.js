@@ -1,4 +1,4 @@
-let Page = require('../framework/models/Page.js')
+let Page = require('../../framework/models/Page.js')
 
 class SignUpPage extends Page {
 
@@ -23,7 +23,7 @@ class SignUpPage extends Page {
 
   get url() {
 
-    return app.config.domain + '/en-hk/register.do'
+    return app.config.domain + '/register.do'
 
   }
 

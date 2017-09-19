@@ -1,4 +1,4 @@
-let Page = require('../framework/models/Page.js')
+let Page = require('../../framework/models/Page.js')
 
 class ForgotPasswordPage extends Page {
 
@@ -17,7 +17,7 @@ class ForgotPasswordPage extends Page {
 
   get url() {
 
-    return app.config.domain + '/en-hk/forgetPassword.do'
+    return app.config.domain + '/forgetPassword.do'
 
   }
 

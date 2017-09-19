@@ -1,4 +1,4 @@
-let Page = require('../framework/models/Page.js')
+let Page = require('../../framework/models/Page.js')
 
 class SearchResultPage extends Page {
 
@@ -11,7 +11,7 @@ class SearchResultPage extends Page {
 		    "keyword at the title": this.by.xpath('//title[contains(text(), `${keyword}`)]'),
 		    "job(s) for": this.by.xpath('//*[@id="searchResultPage"]/div[1]/h1/span'),
 		    "Job Ad title": this.by.className('job_detail_link'),
-		    "1st Job Ad": this.by.id('searchResults_area_0')
+		    "Job Ad": this.by.id('searchResults_area_X')
     }
 
   }
@@ -25,7 +25,18 @@ class SearchResultPage extends Page {
 
   containSearchCriteria (text) {
   	let xpath = this.by.xpath(`//span[contains(text(), '${text}')]`)
-  	return this.waitAndLocate(xpath, 5000)
+  	return this.locate(xpath, 5000)
+  }
+
+// N should be within 0-9
+  goToNthJobAd (N) {
+    let elementId = this.by.id('searchResults_area_' + N)
+
+    return this.scrollTo(elementId)
+      .then( () => {
+        return this.click(elementId)
+    })
+
   }
 
 
