@@ -22,7 +22,7 @@ Background: Go to Sign Up page from Search page
 
   Examples:
     | firstName | lastName | msg |
-    |  First |  Last | Your account is ready! |
+    |  First |  Last | Your account is ready ! |
 
   Scenario Outline: User cannot create account with incorrect information
     Given I should land on Login page
