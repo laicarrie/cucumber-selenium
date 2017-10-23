@@ -4,12 +4,17 @@ class SampleTransformer extends Transformer {
 
   defineMapping(){
     return {
-      "email of account with resume": app.config.sampleWithResume.email,
-      "password of account with resume": app.config.sampleWithResume.password,
+      "an account with resume": app.config.sampleWithResume1,
+      "email of account with resume": app.config.sampleWithResume1.email,
+      "password of account with resume": app.config.sampleWithResume1.password,
+
+      "an account without resume": app.config.sampleWithoutResume,
       "email of account without resume": app.config.sampleWithoutResume.email,
       "password of account without resume": app.config.sampleWithoutResume.password,
-      "correct email": app.config.sampleWithResume.email,
-      "correct password": app.config.sampleWithResume.password
+
+      "an account": app.config.sampleWithResume2,
+      "correct email": app.config.sampleWithResume2.email,
+      "correct password": app.config.sampleWithResume2.password
     }
   }
 }

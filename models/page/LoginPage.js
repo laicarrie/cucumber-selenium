@@ -24,23 +24,6 @@ class LoginPage extends Page {
   }
 
 
-  login(email, password) {
-
-  	return this.go()
-	  .then( () => {
-    	return this.waitAndFill('email field', email, 5000)
-      })
-      .then( () => {
-
-        return this.waitAndFill('password field', password, 5000)
-      })
-      .then( () => {
-
-        return this.click('Log in')
-      });
-  }
-
-
 }
 
 module.exports = LoginPage

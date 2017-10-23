@@ -9,38 +9,71 @@ class SearchResultPage extends Page {
 //      "Search jobs": this.by.xPath("//input[contains(@value,'Log in')]")
 		    "Edit Search": this.by.linkText('Edit Search'),
 		    "keyword at the title": this.by.xpath('//title[contains(text(), `${keyword}`)]'),
-		    "job(s) for": this.by.xpath('//*[@id="searchResultPage"]/div[1]/h1/span'),
+        "Search Criteria": this.by.xpath('//*[@id="searchResultPage"]/div[1]/h1/span'),
 		    "Job Ad title": this.by.className('job_detail_link'),
-		    "Job Ad": this.by.id('searchResults_area_X')
+		    "View": this.by.className('searchResults_area'),
+        "Save": this.by.className('btn_favor'),
+        "Current page": this.by.xpath('//a[contains(@class, "current")]'),
+        "Next page": this.by.linkText('>'),
+        "Previous page": this.by.linkText('<')
     }
 
   }
 
   get url() {
-
-    return ''
+    let view = new SearchPage(app.driver)
+//    return ''
+    return view.getAllJobSRP_url()
 
   }
 
 
-  containSearchCriteria (text) {
-  	let xpath = this.by.xpath(`//span[contains(text(), '${text}')]`)
-  	return this.locate(xpath, 5000)
+  savedOrNot(jobNo, status) {
+    let number = jobNo - 1
+    let elementId
+
+//    if (status == "saved") { elementId = this.by.xpath(`//*[@id="searchResults_area_`+ number + `"]/div/a[1][@class="btn_favor btn_on"]`) }
+//    if (status == "unsaved") { elementId = this.by.css(`.//*[@id="searchResults_area_`+ number + `"]/div/a[1][@class="btn_favor.btn_off"]`) }
+    if (status == "unsaved") { elementId = this.by.css(`div[data-offset="` + number + `"] a.btn_favor.btn_off`) }
+    if (status == "saved") { elementId = this.by.css(`div[data-offset="` + number + `"] a.btn_favor`) }
+
+    return this.locate(elementId)
+      .then(function (element) {
+
+        console.log(element)
+        return element.getAttribute("class")
+
+      })
+      .then(function(cssClass) {
+
+        console.log(cssClass)
+        return
+
+      })
   }
 
-// N should be within 0-9
-  goToNthJobAd (N) {
-    let elementId = this.by.id('searchResults_area_' + N)
+  goToNextPage () {
 
-    return this.scrollTo(elementId)
+    return this.locate("Next page")
       .then( () => {
-        return this.click(elementId)
-    })
-
+        return this.scrollTo("Next page")
+      })
+      .then ( () => {
+        return this.click("Next page")
+      })
   }
 
+  goToPreviousPage () {
+
+    return this.locate("Previous page")
+      .then( () => {
+        return this.scrollTo("Previous page")
+      })
+      .then( () => {
+        return this.click("Previous page")
+      })
+  }
 
 }
 
 module.exports = SearchResultPage
-//*[@id="searchResultPage"]

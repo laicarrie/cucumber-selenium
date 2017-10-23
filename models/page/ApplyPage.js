@@ -9,6 +9,8 @@ class ApplyPage extends Page {
 //      "Search jobs": this.by.xPath("//input[contains(@value,'Log in')]")
         "Back": this.by.className('back'),
 		    "Resume list": this.by.id('resume'),
+        "Resume options": this.by.xpath(`//*[@id="resume"]//option`),
+        "Resume dropdown list": `//*[@id="resume"]/`,
         "Cover Letter list": this.by.id('coverLetterId'),
         "First Name": this.by.id('txtfirstName'),
         "Last Name": this.by.id('txtLastName'),
@@ -29,7 +31,7 @@ class ApplyPage extends Page {
         "Employment period (from - year)": this.by.id('startYear'),
         "Employment period (until - month)": this.by.id('untilMonth'),
         "Employment period (until - year)": this.by.id('untilYear'),
-        "Apply": this.by.id('doApply'),
+        "Send": this.by.id('doApply'),
 
 
 //		    "keyword at the title": this.by.xpath('//title[contains(text(), `${keyword}`)]'),

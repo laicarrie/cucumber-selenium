@@ -6,20 +6,24 @@ class SearchPage extends Page {
 
     return {
 
-		"ID": this.by.xpath('//title[contains(text(), "Search and apply jobs")]'),
-		"Keyword field": this.by.id('txtKeyword'),
-		"Job function list": this.by.id('jobFunctionId'),
-		"Monthly": this.by.className('left spanFour blueDiv'),
-		"Hourly": this.by.className('right spanFour blueDiv'),
-		"minimum salary": this.by.id('salaryF'),
-		"maximum salary": this.by.id('salaryT'),
-		"More options": this.by.linkText('More options'),
-		"Search jobs": this.by.id('submitButton'),
-		"Location list": this.by.id('locationId'),
-		"Career level from list": this.by.id('careerLevelFromId'),
-		"Career level to list": this.by.id('careerLevelToId'),
-		"Employment type list": this.by.id('employmentTermId'),
-		"Industry list": this.by.id('industryId')
+  		"ID": this.by.xpath('//title[contains(text(), "Search and apply jobs")]'),
+  		"Keyword field": this.by.id('txtKeyword'),
+  		"Job function dropdown list": `//*[@id="jobFunctionId"]/`,
+  		"Monthly": this.by.className('left spanFour blueDiv'),
+  		"Hourly": this.by.className('right spanFour blueDiv'),
+  		"minimum salary": this.by.xpath('salaryF'),
+      "Minimum salary dropdown list": `//*[@id="salaryF"]/`,
+  		"maximum salary": this.by.id('salaryT'),
+      "Maximum salary dropdown list": `//*[@id="salaryT"]/`,
+  		"More options": this.by.linkText('More options'),
+  		"Search jobs": this.by.id('submitButton'),
+  		"Location list": this.by.id('locationId'),
+      "Location dropdown list": `//*[@id="locationId"]/`,
+  		"(From) Career level dropdown list": `//*[@id="careerLevelFromId"]/`,
+  		"(To) Career level dropdown list": `//*[@id="careerLevelToId"]/`,
+  		"Employment type dropdown list": `//*[@id="employmentTermId"]/`,
+  		"Industry dropdown list": `//*[@id="industryId"]/`,
+      "Clear all": this.by.id('ClearAll'),
     }
 
 
@@ -30,27 +34,36 @@ class SearchPage extends Page {
     return app.config.domain + '/search.do'
 
   }
-// //*[@id="salaryF"]/option[1]
-  checkSalaryMin (elementID, from){
-  	let minOptionPath
-  	if (elementID == "minimum salary") { minOptionPath = this.by.xpath('//*[@id="salaryF"]/option[contains(@value, "0")]') }
-  	if (elementID == "maximum salary") { minOptionPath = this.by.xpath('//option[contains(@value, "10999")]') }
 
-  	return this.locate(minOptionPath, 5000).getText()
-    .then( (text) => {
-    	if (text == from) { return }
-  	})
+  checkSalaryFrom (elementId, from){
+
+    let optionPath
+    if (elementId == "minimum salary") { optionPath = this.by.xpath('//*[@id="salaryF"]/option[1]') }
+    if (elementId == "maximum salary") { optionPath = this.by.xpath('//*[@id="salaryT"]/option[1]') }
+
+    return this.checkText(optionPath, from)
   }
 
-  checkSalaryMax (elementID, to){
-  	let maxOptionPath
-  	if (elementID == "minimum salary") { maxOptionPath = this.by.xpath('//option[contains(@value, "120000")]')}
-  	if (elementID == "maximum salary") { maxOptionPath = this.by.xpath('//option[contains(@value, "2147483647")]') }
 
-  	return this.locate(maxOptionPath, 5000).getText()
-  	.then( (text) => {
-  		if (text == to) { return }
-  	})
+  checkSalaryTo (elementId, to){
+
+    let optionPath
+    if (elementId == "minimum salary") { optionPath = this.by.xpath('//*[@id="salaryF"]/option[10]') }
+    if (elementId == "maximum salary") { optionPath = this.by.xpath('//*[@id="salaryT"]/option[10]') }
+
+    return this.checkText(optionPath, to)
+  }
+
+
+  getAllJobSRP_url(){
+
+    return this.go()
+    .then( () => {
+      return this.click("Search jobs")
+      .then( () => {
+        return this.driver.getCurrentUrl()
+      })
+    })
   }
 
 

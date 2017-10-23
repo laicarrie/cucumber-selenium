@@ -4,78 +4,115 @@ var {defineSupportCode} = require('cucumber');
 
 defineSupportCode(function({Given, When, Then}) {
 
-  Given("I am on {page}", function(viewClass){
-    let view = new viewClass(app.driver)
+  let handleSample = function(context, sample) {
 
-    this.view = view
-    return this.view.go()
-  });
+    if (context.sample && context.sample[sample]) {
+
+      return context.sample[sample]
+
+    }
+
+    let value = app.trans('Sample', sample)
+    context.sample = context.sample ? context.sample : {}
+    context.sample[sample] = value
+
+    return value
+  }
+
+
 
   Given("I go to {page}", function(viewClass){
+
     let view = new viewClass(app.driver)
 
     this.view = view
     return this.view.go()
-  });
-
-  Given("I go to the {order} Job Ad", function(order){
-    let number = parseInt(order) - 1
-
-    return this.view.goToNthJobAd(number)
-  });
-
-/*
-  Given('I am on {string}', function(text) {
-    let viewClass = viewMapping[text]
-    let view = new viewClass(app.driver)
-
-    this.view = view
-    return view.go()
-
-  });
-  */
-
-  Given('I am logged in with {string} and {string}', function(email, password) {
-/*    let account = accountMapping[text]
-    let email = account[0]
-    let password = account[1]  */
-    let view = new LoginPage(app.driver)
-
-    this.view = view
-    return this.view.login(email, password)
 
   });
 
 
-  Given('{noQuoteString} is selected', function(text) {
-//    return this.view.click(text)
-    if (text == "Monthly") {
-      return this.view.checkSalaryMin("minimum salary", "0")
+  Given("I browse to the {noQuoteString} page", function(text){
+
+    if ( text == 'next' ) { return this.view.goToNextPage() }
+    if ( text == 'previous' ) { return this.view.goToPreviousPage() }
+
+  });
+
+
+  Given("The page number should be {noQuoteString}", function(text){
+
+    return this.view.scrollTo("Current page")
       .then( () => {
-        return this.view.checkSalaryMax("minimum salary", "120000")
+        return this.view.checkText("Current page", text)
       })
+
+  });
+
+  Given('I am logged in to {noQuoteString}', function(account) {
+
+    let view = new LoginPage(app.driver)
+    this.view = view
+    return this.view.go()
+      .then ( () => {
+        return this.view.fill('email field', account.email)
+      })
+      .then( () => {
+        return this.view.fill('password field', account.password)
+      })
+      .then( () => {
+        return this.view.click("Log in")
+      })
+
+  });
+
+
+  Given('Salary unit should be selected as {noQuoteString}', function(text) {
+
+    if (text == "Monthly") {
+
+      return this.view.checkSalaryFrom("minimum salary", "0")
+        .then( () => {
+          return this.view.checkSalaryTo("minimum salary", "120,000")
+        })
 
     } else if (text == "Hourly") {
-      return this.view.checkSalaryMin("minimum salary", "0")
-      .then( () => {
-        return this.view.checkSalaryMax("minimum salary", "600")
-      })
+
+      return this.view.checkSalaryFrom("minimum salary", "0")
+        .then( () => {
+          return this.view.checkSalaryTo("minimum salary", "600")
+        })
 
     }
   });
 
 
-  When('I type in {noQuoteString} on {noQuoteString}', function (text, inputfield) {
+  When('I get number of {noQuoteString}', function (text) {
 
-//    return this.view.waitAndFill(inputfield, text, 5000)
-    return this.view.fill(inputfield, text)
-//   return this.driver.findElement({xpath: `//input[contains(@value,'${text}')]`})
+    return this.view.getDropdownOptionCount(text)
+
   });
 
 
-  When('I select {noQuoteString} from {noQuoteString}', function (text, optionlist) {
+  When('I type in {noQuoteString} on {noQuoteString}', function (text, inputField) {
 
-    return this.view.selectFromList(text, 5000)
+    return this.view.fill(inputField, text)
+
+  });
+
+
+  When('I select {noQuoteString} from {noQuoteString}', function (text, optionList) {
+
+    return this.view.selectFromDropdownList(optionList, text, 5000)
+
+  });
+
+  Then('{noQuoteString} should be selected on {noQuoteString}', function (text, optionList) {
+
+    return this.view.getSelectedDropdownOption(optionList, text, 5000)
+    .then( (selectedOption) => {
+      return console.log(selectedOption)
+    })
+
   });
 
 /*
@@ -93,49 +130,72 @@ defineSupportCode(function({Given, When, Then}) {
     .then( () => {
       return this.view.click(text)
     })
+
+  });
+
+  When('I click to {noQuoteString} the {order} Job Ad', function (text, order) {
+
+    return this.view.clickOneOfElements(text, order)
+
+  });
+
+  Then('The {order} job is {noQuoteString}', function (order, status) {
+
+    return this.view.savedOrNot(order, status)
+
   });
 
   Then('I take snapshot', function () {
 
     return this.view.snapShot(this)
+
   });
 
   Then('I should see {noQuoteString} button', function (text) {
 
-//    return this.view.waitAndLocate(text, 5000)
     return this.view.locate(text, 5000)
+
   });
 
 
-  Then('the Search criteria contains {noQuoteString}', function (text) {
-    return this.view.containSearchCriteria(text)
+  Then('The {noQuoteString} should contain {noQuoteString}', function (elementId, text) {
+
+    return this.view.checkContainText(elementId, text)
+
   });
 
   Then('I should see {module}', function (viewClass) {
+
     let view = new viewClass(app.driver)
     return view.exist()
+
   });
 
   Then('I should land on {page}', function (viewClass) {
+
     let view = new viewClass(app.driver)
     this.view = view
 
     return this.view.exist()
+
   });
 
-  Then('error alert pops up: {noQuoteString}', function (text) {
+  Then('Alert pops up: {noQuoteString}', function (text) {
 
     return this.view.checkAlertMsg(text, 5000)
+
   });
 
-  Then('{noQuoteString} ranges from {noQuoteString} to {noQuoteString}', function (elementId, from, to) {
+  Then('{noQuoteString} should be ranged from {noQuoteString} to {noQuoteString}', function (elementId, from, to) {
 
-    return this.view.checkSalaryMin(elementId, from)
-    .then( () => {
+    return this.view.checkSalaryFrom(elementId, from)
+      .then( () => {
 
-      return this.view.checkSalaryMax(elementId, to)
-    })
+        return this.view.checkSalaryTo(elementId, to)
+      })
+
   });
+
 
 
 });

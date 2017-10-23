@@ -27,24 +27,7 @@ class JobAdPage extends Page {
     return app.config.domain + '/jobad/english-teacher-100003005557944'
 
   }
-/*
-  searchAndGoToFirstJobID () {
-    let view = new SearchPage(app.driver)
-    return view.go()
-    .then( () => {
 
-      return view.click('Search jobs')
-      .then ( () => {
-
-        return this.view.waitAndLocate('//*[@id="searchResults_area_0"]/div/h3/a', 5000)
-        then( (element) => {
-          element.getAttribute("href")
-        })
-
-      })
-    })
-  }
-  */
 
 }
 

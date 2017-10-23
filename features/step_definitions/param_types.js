@@ -56,7 +56,7 @@ defineSupportCode(function({BeforeAll, defineParameterType}) {
   })
 
   defineParameterType( {
-    regexp: /([a-zA-Z0-9 \+\@\,\.]+)/,
+    regexp: /([a-zA-Z0-9 \+\@\,\.\(\)\&\/]+)/,
     transformer: noQuoteStringTransform,
     typeName: 'noQuoteString'
   })

@@ -1,4 +1,5 @@
 let {until, By} = require('selenium-webdriver')
+let {assert} = require('chai')
 
 
 class View {
@@ -47,6 +48,69 @@ class View {
       return this.locate('ID')
 
   }
+
+
+  /*
+     * check the text value in a element
+     *
+     * @method checkText
+     *
+     * @param {string} elementId the elementId being used to get the selector. TEMP: we accpet a selector too.
+     * @param {string} text the string expected
+     *
+     * @return {obj} a promise
+     */
+
+    checkText(elementId, text) {
+
+      this.driver.sleep(this.sleepBeforeRun)
+
+      return this.driver.findElement(this.getSelector(elementId))
+        .then(function(element) {
+
+          return element.getText()
+
+        })
+        .then(function(elementText) {
+
+          assert.equal(elementText, text)
+
+        })
+
+    }
+
+    /*
+     * check the text of an element contain an expected text
+     *
+     * @method checkContainText
+     *
+     * @param {string} elementId the elementId being used to get the selector. TEMP: we accpet a selector too.
+     * @param {string} text the string expected
+     *
+     * @return {obj} a promise
+     */
+
+    checkContainText(elementId, text) {
+
+      this.driver.sleep(this.sleepBeforeRun)
+
+      return this.driver.findElement(this.getSelector(elementId))
+        .then(function(element) {
+
+          return element.getText()
+
+        })
+        .then(function(elementText) {
+
+          assert.include(elementText, text);
+
+        })
+
+    }
+
+
+
+
 
   /*
    * scroll to a point until the element is visible
@@ -245,6 +309,54 @@ class View {
   }
 
 
+  clickOneOfElements(elementId, idx) {
+
+    this.driver.sleep(this.sleepBeforeRun)
+
+    return this.driver.findElements(this.getSelector(elementId))
+      .then( (elements) => {
+
+        /* convert human understanding to array perspective */
+        let element = elements[idx - 1]
+
+        return element.click()
+      })
+  }
+
+  /*
+   * count the number of element exist
+   *
+   * @method count
+   *
+   * @param {string} elementId the elementId being used to get the selector. TEMP: we accpet a selector too.
+   * @param {integer} count the length of the elements expected
+   *
+   * @return {obj} a promise}
+   */
+
+  getDropdownOptionCount(elementId) {
+
+    this.driver.sleep(this.sleepBeforeRun)
+
+    return this.driver.findElements(this.getSelector(elementId))
+      .then( (elements) => {
+
+        return elements.length
+      })
+  }
+
+
+  clickOnOfOption(elementId) {
+
+    this.driver.sleep(this.sleepBeforeRun)
+
+    return this.driver.findElements(this.getSelector(elementId))
+      .then( (elements) => {
+
+        return elements.length
+      })
+  }
+
 
   /*
    * count the number of element exist
@@ -268,32 +380,82 @@ class View {
       })
   }
 
-  selectFromList(option, timeout = 5000) {
 
-//    return this.waitAndLocate(elementId, timeout).click()
-//    .then( () => {
-      let xpath = this.by.xpath(`//option[contains(text(), '${option}')]`)
-      return this.locate(xpath, 5000).click()
-//    });
 
-  }
   /*
-  waitAndLocate(elementId, timeout = 5000) {
+   * select one of the option in a drop down list
+   *
+   * @method selectFromDropDownList
+   *
+   * @param {string} elementId the elementId being used to get the selector. TEMP: we accpet a selector too.
+   * @param {string} option the text value of the option being used to get the selector. TEMP: we accpet a selector too
+   *
+   */
 
-    let element = this.elements[elementId]
+  selectFromDropdownList(elementId, option, timeout = 5000) {
 
-    element = element ? element : elementId
+    this.driver.sleep(this.sleepBeforeRun)
 
-    var condition = until.elementLocated(element);
-    return this.driver.wait(condition, timeout);
+    let xpath = this.by.xpath( this.getSelector(elementId) + `option[contains(text(), '${option}')]`)
+    return this.locate(xpath, 5000).click()
 
   }
 
-  waitAndFill(elementId, keyin, timeout = 5000) {
+  getSelectedDropdownOption(elementId, timeout = 5000) {
 
-    return this.waitAndLocate(elementId, timeout).sendKeys(keyin)
+    this.driver.sleep(this.sleepBeforeRun)
+
+    let xpath = this.by.xpath( this.getSelector(elementId) + `option[contains(@selected, 'selected')]`)
+    return this.locate(xpath, 5000).getText()
 
   }
+
+  /*
+   * NOT YET IMPLEMENTED
+   * drag one element to another element
+   *
+   */
+  dragTo(sourceElementId, targetElementId) {
+
+    this.driver.sleep(this.sleepBeforeRun)
+
+    let sourceElement
+
+    return this.driver.findElement(this.getSelector(sourceElementId))
+      .then( (element) => {
+
+        sourceElement = element
+
+        return this.driver.findElement(this.getSelector(targetElementId))
+      })
+      .then( (targetElement) => {
+
+        return this.driver.actions()
+          .mouseDown(sourceElement)
+          .mouseMove({x: 80, y: 100})
+          .mouseUp()
+          .perform()
+
+      })
+//    .then( (targetElement) => {
+
+//      return this.driver.actions()
+//        .mouseMove({x: -80, y: 100})
+//        .perform()
+//
+//    })
+      .then( () => {
+
+        this.driver.sleep(10000)
+
+      })
+
+  }
+
+
+
+
+  /*
 
   clickAndSelect(elementId, option, timeout = 5000) {
 
@@ -303,40 +465,6 @@ class View {
       return this.waitAndLocate(xpath, 5000).click()
     });
 
-  }
-
-  exist() {
-
-    let ID = this.elements["ID"];
-    return this.waitAndLocate(ID, 5000)
-  }
-
-
-  screenshot(fileName) {
-
-    return this.driver.takeScreenshot()
-    .then(function(image) {
-
-      return new Promise(function(resolve, reject) {
-
-        require('fs').writeFile(`./screenshot/${fileName}.png`, image, 'base64', function(err) {
-
-          if (err) { reject(err); }
-
-          resolve(image);
-
-        })
-      })
-    });
-  }
-
-
-  snapShot(world) {
-
-    return this.driver.takeScreenshot()
-      .then(function(buffer) {
-        return world.attach(buffer, 'image/png')
-      })
   }
 
 
