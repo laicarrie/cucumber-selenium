@@ -8,14 +8,14 @@ Feature: Search Result
     Given I go to Search page
     And I click on Search jobs
 
-@only
+
   Scenario: View job ad
     Given I should land on Search Result page
     When I click to View the 1st Job Ad
     Then I should land on Job Ad page
     And I take snapshot
 
-@test
+
   Scenario Outline: Go to next page
     Given I should land on Search Result page
     And The page number should be <currentPageNo>
@@ -40,7 +40,7 @@ Feature: Search Result
   | 1st |
 
 
-@onlyyy
+
   Scenario Outline: User can login when saving a job and go back to Search result page
     Given I should land on Search Result page
     And I take snapshot
@@ -48,7 +48,7 @@ Feature: Search Result
     And I click to Save the <Nth> Job Ad
     And I should land on Login page
     When I am logged in to an account
-    Then Alert pops up: <message>
+    Then Alert should pop up: <message>
     And I should land on Search Result page
 #    And The <Nth> job is <afterStatus>
     And I take snapshot

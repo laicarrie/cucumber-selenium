@@ -6,10 +6,7 @@ Feature: Apply with Resume
 Background: Login & Search for a job
   Given I am logged in to an account with resume
   And I should see Logged In Header module
-  And I go to Search page
-  And I click on Search jobs
-  And I should land on Search Result page
-  And I click to View the 2nd Job Ad
+  And I go to Job Ad page
 
 
   Scenario: Existing member with resume can start apply
@@ -22,8 +19,10 @@ Background: Login & Search for a job
 
   Scenario: Existing member with resume can submit application by clicking Send button
     Given I should land on Job Ad page
+    And I take snapshot
     And I click on Apply
     And I should land on Apply page
+    And I take snapshot
     When I click on Send
     Then I should land on Apply Success page
     And I take snapshot

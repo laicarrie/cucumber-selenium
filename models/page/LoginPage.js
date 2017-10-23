@@ -11,7 +11,8 @@ class LoginPage extends Page {
 		"password field": this.by.id('uPwd'),
 		"Log in": this.by.xpath('//input[contains(@value,"Log in")]'),
 		"Forgot password": this.by.linkText('Forgot password?'),
-		"Sign up": this.by.linkText('Sign up'),
+    "Sign up button at the header": this.by.className('a_signin'),
+		"Sign up": this.by.xpath('//div[contains(@class, "reg")]/p/a'),
 		"error alert prompt": this.by.id('error_message')
     }
 

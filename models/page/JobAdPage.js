@@ -21,10 +21,7 @@ class JobAdPage extends Page {
 
   get url() {
 
-//    if (env == "prod") { return 'https://m.jobsdb.com/en-hk/jobad/english-teacher-100003005557944' }
-//    return 'https://v8.preview.m.jobsdb.com/en-hk/jobad/carrie-branded-ad-100003000211873'
-//    return this.searchAndGoToFirstJobID()
-    return app.config.domain + '/jobad/english-teacher-100003005557944'
+    return app.config.domain + '/jobad/' + app.config.activeJobAd
 
   }
 

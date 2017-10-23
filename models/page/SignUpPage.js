@@ -14,7 +14,8 @@ class SignUpPage extends Page {
     "last name field": this.by.id('lastName'),
     "email field": this.by.id('uName'),
 		"password field": this.by.id('uPwd'),
-		"Log in": this.by.className('a_signin'),
+		"Log in button at the header": this.by.xpath('//*[@id="search"]/div[1]/div/a'),
+    "Log in": this.by.xpath('//div[contains(@class, "reg")]/p/a'),
 		"Sign up": this.by.xpath('//input[contains(@value,"Sign up")]'),
 		"error alert prompt": this.by.id('error_message')
     }

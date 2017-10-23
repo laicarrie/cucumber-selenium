@@ -6,7 +6,9 @@ class SearchPage extends Page {
 
     return {
 
-  		"ID": this.by.xpath('//title[contains(text(), "Search and apply jobs")]'),
+  		"ID": this.by.xpath('//*[@id="searchPage"]'),
+      "Log in": this.by.linkText('Log in'),
+      "Sign up": this.by.linkText('Sign up'),
   		"Keyword field": this.by.id('txtKeyword'),
   		"Job function dropdown list": `//*[@id="jobFunctionId"]/`,
   		"Monthly": this.by.className('left spanFour blueDiv'),

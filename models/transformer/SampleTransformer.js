@@ -14,7 +14,9 @@ class SampleTransformer extends Transformer {
 
       "an account": app.config.sampleWithResume2,
       "correct email": app.config.sampleWithResume2.email,
-      "correct password": app.config.sampleWithResume2.password
+      "correct password": app.config.sampleWithResume2.password,
+
+      "an active Job Ad": app.config.activeJobAd
     }
   }
 }

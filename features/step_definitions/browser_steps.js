@@ -180,7 +180,7 @@ defineSupportCode(function({Given, When, Then}) {
 
   });
 
-  Then('Alert pops up: {noQuoteString}', function (text) {
+  Then('Alert should pop up: {noQuoteString}', function (text) {
 
     return this.view.checkAlertMsg(text, 5000)
 
