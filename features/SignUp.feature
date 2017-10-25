@@ -37,6 +37,8 @@ Background: Go to Sign Up page from Search page
   Examples:
     | firstName | lastName | email | password | error msg |
     |  First |  Last | existingEmail | carrie1234 |  |
+    |   | Last | existingEmail | carrie1234 | Please enter all information |
+    | First |  | existingEmail | carrie1234 | Please enter all information |
 
 @test
   Scenario Outline: User can go to Login page from Sign Up page (By <Remarks>)
