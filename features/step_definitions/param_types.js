@@ -2,23 +2,29 @@ var {defineSupportCode, ParameterType } = require('cucumber');
 
 defineSupportCode(function({BeforeAll, defineParameterType}) {
 
+
   let pageTransform = function(s) {
 
-    let viewMapping = {
-      "Login page": LoginPage,
-      "Search page": SearchPage,
-      "Search Result page": SearchResultPage,
-      "Job Ad page": JobAdPage,
-      "Complete Your Profile page": CompleteYourProfilePage,
-      "Sign up page": SignUpPage,
-      "Forgot password page": ForgotPasswordPage,
-      "Apply page": ApplyPage
-    }
-
-    return viewMapping[s]
-
+    return app.trans('Page', s)
   }
 
+  let moduleTransform = function(s) {
+
+    return app.trans('Module', s)
+  }
+
+  let orderTransform = function(s) {
+
+    return s.replace(/st|nd|rd|th/g, "")
+  }
+
+  let noQuoteStringTransform = function(s) {
+
+    return app.trans('Sample', s)
+  }
+
+
+/*
   let moduleTransform = function(s) {
 
     let viewMapping = {
@@ -29,12 +35,37 @@ defineSupportCode(function({BeforeAll, defineParameterType}) {
     return s
 
   }
+  */
 
   defineParameterType( {
-    regexp: /.* page/,
+    regexp: /([a-zA-Z ]+) page/,
     transformer: pageTransform,
     typeName: 'page'
   })
+
+  defineParameterType( {
+    regexp: /([a-zA-Z ]+) module/,
+    transformer: moduleTransform,
+    typeName: 'module'
+  })
+
+  defineParameterType( {
+    regexp: /(\d+st|\d+nd|\d+rd|\d+th)/,
+    transformer: orderTransform,
+    typeName: 'order'
+  })
+
+  defineParameterType( {
+    regexp: /([a-zA-Z0-9 \+\@\,\.\(\)\&\/]+)/,
+    transformer: noQuoteStringTransform,
+    typeName: 'noQuoteString'
+  })
+
+  defineParameterType( {
+    regexp: /([0-9]+)/,
+    typeName: 'integer'
+  })
+
 /*
   defineParameterType( {
     regexp: /"(.*) module"/,
@@ -42,11 +73,5 @@ defineSupportCode(function({BeforeAll, defineParameterType}) {
     typeName: 'module'
   })
   */
-
-  defineParameterType( {
-    regexp: /.* module/,
-    transformer: moduleTransform,
-    typeName: 'module'
-  })
 
 })

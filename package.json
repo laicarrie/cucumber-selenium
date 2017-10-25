@@ -6,13 +6,20 @@
   "scripts": {
     "test": "./node_modules/.bin/cucumber-js"
   },
+  "bin": {
+    "report": "./scripts/genReport.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.1.2",
     "chromedriver": "^2.31.0",
     "cucumber": "^3.0.0",
     "cucumber-html-reporter": "^3.0.1",
     "deep-extend": "^0.5.0",
-    "selenium-webdriver": "^3.5.0"
+    "express": "^4.15.5",
+    "geckodriver": "^1.8.1",
+    "selenium-webdriver": "^3.5.0",
+    "underscore": "^1.8.3"
   }
 }

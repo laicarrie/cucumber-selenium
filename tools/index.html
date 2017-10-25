@@ -1,0 +1,100 @@
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <div ng-app="myApp" ng-controller="mainCtrl">
+      
+      <ul class="list-group">
+
+        <li ng-repeat="item in items"  class="list-group-item" >
+
+          <button ng-click="flowButtonClick($index)" type="button" class="btn {{ item.buttonClass }}">{{ item.data.flow }}</button>   
+          <span tabindex="0" data-toggle="popover" data-trigger="focus" data-html="true" data-content="{{item.definitionDescription}}">{{ item.data.definition}}</span>
+        
+          <div style="display: inline" ng-repeat="arg in item.data.args">
+
+            <span tabindex="0" data-toggle="popover" data-trigger="focus" title="{{arg}}" data-content="{{ item.data.argDescription[arg]  }}" ng-mouseover="argElementHover($parent.$index, $index)" class="badge badge-secondary">{{ arg }}</span>
+
+          </div>
+          
+        </li>
+
+      </ul>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+
+      var definitions = JSON.parse('[{"flow":"Given","isRegex":false,"definition":"I am on {page}","argTypes":["page"],"args":["pageClass"],"file":"./features/step_definitions/browser_steps.js","line":16,"description":"drive the browser to the page ","example":"I am on Admin Panel Page ","argDescription":{"pageClass":"the class of the page after transformation"}},{"flow":"When","isRegex":false,"definition":"I fill {noQouteString} to {noQouteString}","argTypes":["noQouteString","noQouteString"],"args":["sample","elementId"],"file":"./features/step_definitions/browser_steps.js","line":32,"description":"clear the field and fill a value to a field WITHOUT PRESSING ENTER. the value better be identifier being translated in SampleTransformer ","example":"I fill correct account email to email field ","argDescription":{"sample":"a string or a key value to be transformed in SampleTransformer ","elementId":"the identifier mapped to the selector in the page object"}},{"flow":"When","isRegex":false,"definition":"I input {noQouteString} to {noQouteString}","argTypes":["noQouteString","noQouteString"],"args":["sample","elementId"],"file":"./features/step_definitions/browser_steps.js","line":44,"description":"clear the field and fill a value to a field ALSO PRESS ENTER. the value better be identifier being translated in SampleTransformer ","example":"I input Red to add options field","argDescription":{"sample":"a string or a key value to be transformed in SampleTransformer ","elementId":"the identifier mapped to the selector in the page object"}},{"flow":"When","isRegex":false,"definition":"I input {noQouteString} to {order} {noQouteString}","argTypes":["noQouteString","order","noQouteString"],"args":["sample","order","elementId"],"file":"./features/step_definitions/browser_steps.js","line":57,"description":"clear the field and fill a value to one of the matched fields ALSO PRESS ENTER. the value better be identifier being translated in SampleTransformer ","example":"I input Red to 2nd add options field","argDescription":{"sample":"a string or a key value to be transformed in SampleTransformer ","order":"the order of the target element (1st | 2nd | 3rd | 10th)","elementId":"the identifier mapped to the selector in the page object"}},{"flow":"When","isRegex":false,"definition":"I click on {noQouteString}","argTypes":["noQouteString"],"args":["elementId"],"file":"./features/step_definitions/browser_steps.js","line":68,"description":"click on a element ","example":"I click on add variation ","argDescription":{"elementId":"the identifier mapped to the selector in the page object"}},{"flow":"When","isRegex":false,"definition":"I select {noQouteString} of {noQouteString}","argTypes":["noQouteString","noQouteString"],"args":["selectElementId","elementId"],"file":"./features/step_definitions/browser_steps.js","line":79,"description":"select an option in drop down menu ","example":"I select Iceland of based country dropdown menu","argDescription":{"selectElementId":"the identifier of the option mapped to the selector in the page object","elementId":"the identifier of the drop down menu mapped to the selector in the page object"}},{"flow":"Then","isRegex":false,"definition":"I should be on {page}","argTypes":["page"],"args":["pageClass"],"file":"./features/step_definitions/browser_steps.js","line":89,"description":"assert the current page ","example":"I should be on Admin Panel Page ","argDescription":{"pageClass":"the class of the page after transformation"}},{"flow":"Then","isRegex":false,"definition":"I should be redirected to {page}","argTypes":["page"],"args":["pageClass"],"file":"./features/step_definitions/browser_steps.js","line":103,"description":"assert the redirection","example":"I should be redirected to Admin Login Page","argDescription":{"pageClass":"the class of the page after transformation"}},{"flow":"Then","isRegex":false,"definition":"I should see {noQouteString}","argTypes":["noQouteString"],"args":["elementId"],"file":"./features/step_definitions/browser_steps.js","line":119,"description":"assert an element exist  ","example":"I should see variation row","argDescription":{"elementId":"the identifier mapped to the selector in the page object"}},{"flow":"Then","isRegex":false,"definition":"I see {noQouteString}","argTypes":["noQouteString"],"args":["elementId"],"file":"./features/step_definitions/browser_steps.js","line":129,"description":"assert an element exist  ","example":"I see variation row","argDescription":{"elementId":"the identifier mapped to the selector in the page object"}},{"flow":"Then","isRegex":false,"definition":"I should see {integer} {noQouteString}","argTypes":["integer","noQouteString"],"args":["count","elementId"],"file":"./features/step_definitions/browser_steps.js","line":140,"description":"assert a certain number of elements exist ","example":"I should see 6 variation row","argDescription":{"count":"the expected count of the element ","elementId":"the identifier mapped to the selector in the page object"}},{"flow":"Then","isRegex":false,"definition":"I take a snapshot","argTypes":[],"args":null,"file":"./features/step_definitions/browser_steps.js","line":149,"description":"take snapshot and append it to the scenario. mainly for debug and reports","example":"I take a snapshot ","argDescription":{}},{"flow":"Then","isRegex":false,"definition":"I scroll down to {noQouteString}","argTypes":["noQouteString"],"args":["elementId"],"file":"./features/step_definitions/browser_steps.js","line":159,"description":"scroll down until an element is located ","example":"I scroll down to login button ","argDescription":{"elementId":"the identifier mapped to the selector in the page object"}},{"flow":"Then","isRegex":false,"definition":"I drag {noQouteString} to {noQouteString}","argTypes":["noQouteString","noQouteString"],"args":["sourceElementId","targetElementId"],"file":"./features/step_definitions/browser_steps.js","line":170,"description":"NOT WORK YET. drag an element to another element ","example":"I drag elementA to elementB ","argDescription":{"sourceElementId":"the identifier mapped to the selector in the page object","targetElementId":"the identifier mapped to the selector in the page object"}}]')
+      console.log(definitions)
+    
+      var app = angular.module('myApp', [])
+
+      app.controller('mainCtrl', function($scope, $http) {
+       
+
+        $scope.items = definitions.map( function(definition) {
+         
+          var item = {}
+          item.data = Object.assign({}, definition)
+
+          // set button Class
+          if (definition.flow  == 'Given') {  item.buttonClass = 'btn-primary' } 
+          if (definition.flow  == 'When') {  item.buttonClass = 'btn-warning' }
+          if (definition.flow  == 'Then') {  item.buttonClass = 'btn-danger' } 
+
+          item.definitionDescription = `DESC: ${item.data.description} <br><br> EXAMPLE: ${item.data.example}`
+
+          return item 
+
+        }) 
+
+        $scope.selectedFlow = null
+
+        $scope.initItems = Object.assign([], $scope.items)
+
+        $scope.flowButtonClick = function(idx) {
+
+          var flow = $scope.items[idx].data.flow
+
+          $scope.selectedFlow = $scope.selectedFlow == flow ? null : flow
+
+          $scope.items = $scope.initItems.filter(function(item) {
+         
+            if (!$scope.selectedFlow) return true
+
+            return item.data.flow == $scope.selectedFlow
+          
+          })
+
+        }
+
+        $scope.argElementHover = function(parentIdx, idx) {
+      
+//          console.log($scope.items[parentIdx].data.args[idx])
+      
+        }
+
+      })
+
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover(); 
+
+        $('.popover-dismiss').popover({
+            trigger: 'focus'
+        })
+      });
+
+    </script>
+  </body>
+
+
+</html>

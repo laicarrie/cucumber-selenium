@@ -1,87 +1,118 @@
 var seleniumWebdriver = require('selenium-webdriver');
 var {defineSupportCode} = require('cucumber');
 
+
 defineSupportCode(function({Given, When, Then}) {
-/*
-  let viewMapping = {
-    "Login page": LoginPage,
-    "Search page": SearchPage,
-    "Logged in header": loggedInHeader,
-    "Search Result page": SearchResultPage,
-    "Job Ad page": JobAdPage,
-    "Complete Your Profile page": CompleteYourProfilePage,
-    "Sign up page": SignUpPage,
-    "Forgot password page": ForgotPasswordPage
+
+  let handleSample = function(context, sample) {
+
+    if (context.sample && context.sample[sample]) {
+
+      return context.sample[sample]
+
+    }
+
+    let value = app.trans('Sample', sample)
+    context.sample = context.sample ? context.sample : {}
+    context.sample[sample] = value
+
+    return value
   }
 
-  let accountMapping = {
-    "account with resume": ["carrielai@seekasia.com", "Carrie1234"],
-    "account without resume": ["jobsdbcarrielai4@gmail.com", "carrie1234"]
-  }
 
-  */
-
-  Given("I am on {page}", function(viewClass){
-    let view = new viewClass(app.driver)
-
-    this.view = view
-    return this.view.go()
-  });
 
   Given("I go to {page}", function(viewClass){
+
     let view = new viewClass(app.driver)
 
     this.view = view
     return this.view.go()
-  });
-
-  Given("I go to the first job", function(){
-
-    return this.view.click("1st Job Ad")
 
   });
 
-/*
-  Given('I am on {string}', function(text) {
-    let viewClass = viewMapping[text]
-    let view = new viewClass(app.driver)
 
-    this.view = view
-    return view.go()
+  Given("I browse to the {noQuoteString} page", function(text){
+
+    if ( text == 'next' ) { return this.view.goToNextPage() }
+    if ( text == 'previous' ) { return this.view.goToPreviousPage() }
 
   });
-  */
 
-  Given('I am logged in with {string} and {string}', function(email, password) {
-/*    let account = accountMapping[text]
-    let email = account[0]
-    let password = account[1]  */
+
+  Given("The page number should be {noQuoteString}", function(text){
+
+    return this.view.scrollTo("Current page")
+      .then( () => {
+        return this.view.checkText("Current page", text)
+      })
+
+  });
+
+  Given('I am logged in to {noQuoteString}', function(account) {
+
     let view = new LoginPage(app.driver)
-
     this.view = view
-    return this.view.login(email, password)
+    return this.view.go()
+      .then ( () => {
+        return this.view.fill('email field', account.email)
+      })
+      .then( () => {
+        return this.view.fill('password field', account.password)
+      })
+      .then( () => {
+        return this.view.click("Log in")
+      })
 
   });
 
 
-  Given('{string} is selected', function(text) {
-    return this.view.click(text)
-    .then( () => {
-      return this.view.screenshot(text)
+  Given('Salary unit should be selected as {noQuoteString}', function(text) {
+
+    if (text == "Monthly") {
+
+      return this.view.checkSalaryFrom("minimum salary", "0")
+        .then( () => {
+          return this.view.checkSalaryTo("minimum salary", "120,000")
+        })
+
+    } else if (text == "Hourly") {
+
+      return this.view.checkSalaryFrom("minimum salary", "0")
+        .then( () => {
+          return this.view.checkSalaryTo("minimum salary", "600")
+        })
+
+    }
+  });
+
+
+  When('I get number of {noQuoteString}', function (text) {
+
+    return this.view.getDropdownOptionCount(text)
+
+  });
+
+
+  When('I type in {noQuoteString} on {noQuoteString}', function (text, inputField) {
+
+    return this.view.fill(inputField, text)
+
+  });
+
+
+  When('I select {noQuoteString} from {noQuoteString}', function (text, optionList) {
+
+    return this.view.selectFromDropdownList(optionList, text, 5000)
+
+  });
+
+  Then('{noQuoteString} should be selected on {noQuoteString}', function (text, optionList) {
+
+    return this.view.getSelectedDropdownOption(optionList, text, 5000)
+    .then( (selectedOption) => {
+      return console.log(selectedOption)
     })
-  });
 
-
-  When('I type in {string} on {string}', function (text, inputfield) {
-
-    return this.view.waitAndFill(inputfield, text, 5000)
-//   return this.driver.findElement({xpath: `//input[contains(@value,'${text}')]`})
-  });
-
-
-  When('I select {string} from {string}', function (text, optionlist) {
-
-    return this.view.clickAndSelect(optionlist, text, 5000)
   });
 
 /*
@@ -93,77 +124,78 @@ defineSupportCode(function({Given, When, Then}) {
   */
 
 
-  When('I click on {string}', function (text) {
+  When('I click on {noQuoteString}', function (text) {
 
-    return this.view.click(text)
+    return this.view.scrollTo(text)
+    .then( () => {
+      return this.view.click(text)
+    })
+
   });
 
+  When('I click to {noQuoteString} the {order} Job Ad', function (text, order) {
+
+    return this.view.clickOneOfElements(text, order)
+
+  });
+
+  Then('The {order} job is {noQuoteString}', function (order, status) {
+
+    return this.view.savedOrNot(order, status)
+
+  });
+
+  Then('I take snapshot', function () {
+
+    return this.view.snapShot(this)
+
+  });
+
+  Then('I should see {noQuoteString} button', function (text) {
+
+    return this.view.locate(text, 5000)
+
+  });
+
+
+  Then('The {noQuoteString} should contain {noQuoteString}', function (elementId, text) {
+
+    return this.view.checkContainText(elementId, text)
+
+  });
 
   Then('I should see {module}', function (viewClass) {
 
     let view = new viewClass(app.driver)
-    view.screenshot("123")
     return view.exist()
+
   });
-
-  Then('I should see {string} button', function (text) {
-
-    return this.view.screenshot(text)
-    .then ( () => {
-      return this.view.waitAndLocate(text, 5000)
-    })
-  });
-
-/*
-  Then('I should see {module}', function (viewClass) {
-    let checkColon = /:/.test(viewClass)
-
-    if ( checkColon ) {
-      let view = new viewClass(app.driver)
-      view.screenshot("123")
-      return view.exist()
-    }
-
-    this.view.screenshot(viewClass)
-    return this.view.waitAndLocate(viewClass, 5000)
-
-  });*/
-
-
-  Then('the Search criteria contains {string}', function (text) {
-    let criteria = this.view.containSearchCriteria(text)
-    return this.view.screenshot("jobs(s) for " + text)
-  });
-
 
   Then('I should land on {page}', function (viewClass) {
-//    let viewClass = viewMapping[text]
+
     let view = new viewClass(app.driver)
     this.view = view
 
     return this.view.exist()
-    .then(() => {
 
-      return this.view.screenshot("456")
-    })
   });
 
-  Then('error alert pops up: {string}', function (text) {
+  Then('Alert should pop up: {noQuoteString}', function (text) {
 
     return this.view.checkAlertMsg(text, 5000)
-    .then( () => {
-      return this.view.screenshot("error")
-    })
+
   });
 
-  Then('{string} ranges from {string} to {string}', function (elementID, from, to) {
+  Then('{noQuoteString} should be ranged from {noQuoteString} to {noQuoteString}', function (elementId, from, to) {
 
-    return this.view.checkSalaryMin(elementID, from)
-    .then( () => {
+    return this.view.checkSalaryFrom(elementId, from)
+      .then( () => {
 
-      return this.view.checkSalaryMax(elementID, to)
-    })
+        return this.view.checkSalaryTo(elementId, to)
+      })
+
   });
+
 
 
 });
